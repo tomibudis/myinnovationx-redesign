@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyInnovationX - Connecting Innovators to Solve Real-World Challenges</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-white to-blue-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1">
+                    <h2 class="text-xl font-bold text-gray-900 hover:text-primary transition-colors duration-300">MyInnovationX</h2>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <!-- Home Link -->
+                    
+                    <!-- Opportunities Link -->
+                    <a href="#opportunities" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    
+                    <!-- Innovator/Corporate Link -->
+                    <a href="#innovator-corporate" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    
+                    <!-- About us Link -->
+                    <a href="#about" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <button class="px-4 py-2 bg-gray-900 text-white font-medium text-sm rounded-md hover:bg-gray-800 transition-all duration-300">
+                        Get started
+                    </button>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center justify-between w-full">
+                    <!-- Mobile Menu Button (Left) -->
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <!-- Mobile Logo (Center) -->
+                    <div class="nav-logo-mobile">
+                        <h2 class="text-xl font-bold text-gray-900 hover:text-primary transition-colors duration-300">MyInnovationX</h2>
+                    </div>
+                    
+                    <!-- Mobile Action Buttons (Right) -->
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1.5 text-gray-600 font-medium text-xs hover:text-gray-900 transition-colors duration-300" onclick="scrollToSection('challenges')">
+                            Sign in
+                        </button>
+                        <button class="px-3 py-1.5 bg-gray-900 text-white font-medium text-xs rounded-md hover:bg-gray-800 transition-all duration-300" onclick="scrollToSection('launch-challenge')">
+                            Get started
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <!-- Mobile Navigation Links -->
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="#home" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Home</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="#opportunities" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="#innovator-corporate" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="#about" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Action Buttons -->
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <button class="mobile-menu-item w-full px-4 py-3 text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 text-left" onclick="scrollToSection('challenges')">
+                            Book a demo
+                        </button>
+                        <button class="mobile-menu-item w-full px-4 py-3 border border-gray-300 text-gray-700 font-medium text-sm rounded-md hover:bg-gray-50 transition-all duration-300" onclick="scrollToSection('challenges')">
+                            Sign in
+                        </button>
+                        <button class="mobile-menu-item w-full px-4 py-3 bg-gray-900 text-white font-medium text-sm rounded-md hover:bg-gray-800 transition-all duration-300" onclick="scrollToSection('launch-challenge')">
+                            Get started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-blue-50 pt-[120px]">
+        <!-- Background gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-blue-100/50"></div>
+        
+        <!-- Grid Pattern Background -->
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Large indigo shape (top left) -->
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-indigo-200/30 to-transparent backdrop-blur-[2px] border border-indigo-200/20 shadow-[0_8px_32px_0_rgba(99,102,241,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            
+            <!-- Rose shape (bottom right) -->
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-rose-200/30 to-transparent backdrop-blur-[2px] border border-rose-200/20 shadow-[0_8px_32px_0_rgba(244,63,94,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(244,63,94,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            
+            <!-- Violet shape (mid-left, behind text) -->
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-violet-200/30 to-transparent backdrop-blur-[2px] border border-violet-200/20 shadow-[0_8px_32px_0_rgba(139,92,246,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+            
+            <!-- Amber shape (top right) -->
+            <div class="elegant-shape absolute right-[10%] md:right-[15%] top-[5%] md:top-[10%] w-[200px] h-[50px] md:w-[250px] md:h-[60px] rounded-full bg-gradient-to-r from-amber-200/30 to-transparent backdrop-blur-[2px] border border-amber-200/20 shadow-[0_8px_32px_0_rgba(245,158,11,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: 20deg; animation-delay: 0.6s;"></div>
+            
+            <!-- Cyan shape (bottom left) -->
+            <div class="elegant-shape absolute left-[15%] md:left-[20%] top-[70%] md:top-[75%] w-[250px] h-[50px] md:w-[300px] md:h-[60px] rounded-full bg-gradient-to-r from-cyan-200/30 to-transparent backdrop-blur-[2px] border border-cyan-200/20 shadow-[0_8px_32px_0_rgba(6,182,212,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -25deg; animation-delay: 0.7s;"></div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="relative z-10 container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Badge -->
+                <div class="fade-up group inline-flex items-center gap-0 rounded-full bg-white border border-gray-200/50 px-3 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
+                    <!-- Inner Badge/Tag -->
+                    <div class="-ml-2.5 shrink-0 truncate rounded-full bg-teal-200 px-2.5 py-1 text-xs font-medium text-gray-600">
+                        Just launched 🚀
+                    </div>
+                    <!-- Main Title -->
+                    <div class="flex items-center gap-1 truncate py-1 px-2">
+                        <span class="text-sm font-medium text-gray-700">The Leading Global Innovation Platform ✨</span>
+                    </div>
+                </div>
+                
+                <!-- Main heading -->
+                <div class="fade-up" style="animation-delay: 0.7s;">
+                    <h1 class="text-5xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Connecting Innovators to Solve 
+                        </span>
+                        <br />
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                            Real‑World Challenges
+                        </span>
+                    </h1>
+                </div>
+                
+                <!-- Description -->
+                <div class="fade-up" style="animation-delay: 0.9s;">
+                    <p class="text-md text-gray-600 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                        Submit a challenge or propose your idea. We match you with partners, funding, and pilots to accelerate impact across industries.
+                    </p>
+                </div>
+                <!-- CTA Buttons -->
+                <div class="fade-up flex flex-col sm:flex-row gap-4 justify-center items-center" style="animation-delay: 0.7s;">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-gray-900 text-white shadow-sm hover:bg-gray-800 h-10 px-6">
+                        Launch a challenge
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </button>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 border border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-gray-50 hover:text-gray-900 h-10 px-6">
+                        Join as  Innovators
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Statistics Section -->
+                <div class="fade-up mt-30 md:mt-[250px]" style="animation-delay: 1.1s;">
+                    <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 xl:gap-16">
+                        <!-- 500+ Innovators -->
+                        <div class="text-center lg:text-left">
+                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">500+</div>
+                            <div class="text-sm md:text-base text-gray-600 font-medium">Innovators</div>
+                        </div>
+                        
+                        <!-- Vertical divider -->
+                        <div class="hidden lg:block w-px h-16 bg-gray-300"></div>
+                        
+                        <!-- 30+ Projects & Pilots -->
+                        <div class="text-center lg:text-left">
+                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">30+</div>
+                            <div class="text-sm md:text-base text-gray-600 font-medium">Projects & Pilots</div>
+                        </div>
+                        
+                        <!-- Vertical divider -->
+                        <div class="hidden lg:block w-px h-16 bg-gray-300"></div>
+                        
+                        <!-- 200+ Marketplace Listings -->
+                        <div class="text-center lg:text-left">
+                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">200+</div>
+                            <div class="text-sm md:text-base text-gray-600 font-medium">Marketplace Listings</div>
+                        </div>
+                        <div class="hidden lg:block w-px h-16 bg-gray-300"></div>
+
+                        <div class="text-center lg:text-left">
+                            <p class="text-sm md:text-base text-gray-600 leading-relaxed">
+                                Our platform continues to grow with developers and businesses using productivity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-100/50 via-transparent to-transparent pointer-events-none"></div>
+        
+       
+    </section>
+
+    <!-- Feature Steps Section -->
+    <section id="feature-steps" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl lg:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        How it
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                        Works
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Clear, outcome-driven workflows designed for corporates, governments, and innovators.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Steps List -->
+                <div class="order-2 md:order-1 space-y-8">
+                    <!-- Step 1 -->
+                    <div class="feature-step flex items-center gap-6 md:gap-8" data-step="0">
+                        <div class="step-indicator w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 bg-gray-100 border-gray-300 transition-all duration-500">
+                            <span class="step-number text-lg font-semibold text-gray-600">1</span>
+                            <span class="step-check hidden text-lg font-bold text-white">✓</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 tracking-tighter">
+                                Submit or Discover
+                            </h3>
+                            <p class="text-sm md:text-lg text-gray-600">
+                                Publish a challenge or explore active opportunities across sectors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="feature-step flex items-center gap-6 md:gap-8" data-step="1">
+                        <div class="step-indicator w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 bg-gray-100 border-gray-300 transition-all duration-500">
+                            <span class="step-number text-lg font-semibold text-gray-600">2</span>
+                            <span class="step-check hidden text-lg font-bold text-white">✓</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 tracking-tighter">
+                                Get Matched
+                            </h3>
+                            <p class="text-sm md:text-lg text-gray-600">
+                                We curate the best startups and partners for rapid fit and traction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="feature-step flex items-center gap-6 md:gap-8" data-step="2">
+                        <div class="step-indicator w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border-2 bg-gray-100 border-gray-300 transition-all duration-500">
+                            <span class="step-number text-lg font-semibold text-gray-600">3</span>
+                            <span class="step-check hidden text-lg font-bold text-white">✓</span>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-semibold text-gray-900 mb-2 tracking-tighter">
+                                Pilot & Scale
+                            </h3>
+                            <p class="text-sm md:text-lg text-gray-600">
+                                Run structured pilots, measure outcomes, and scale with support.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Display -->
+                <div class="order-1 md:order-2 relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg bg-gray-100">
+                    <!-- Step 1 Image -->
+                    <div class="feature-image absolute inset-0 transition-all duration-500 ease-in-out" data-step="0">
+                        <img src="https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Learn the Basics" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+
+                    <!-- Step 2 Image -->
+                    <div class="feature-image absolute inset-0 transition-all duration-500 ease-in-out opacity-0" data-step="1">
+                        <img src="https://images.unsplash.com/photo-1723931464622-b7df7c71e380?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Deep Dive" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+
+                    <!-- Step 3 Image -->
+                    <div class="feature-image absolute inset-0 transition-all duration-500 ease-in-out opacity-0" data-step="2">
+                        <img src="https://images.unsplash.com/photo-1725961476494-efa87ae3106a?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Build Projects" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Challenges Section -->
+    <section id="featured-challenges" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Featured
+                        </span>
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                            Challenges
+                        </span>
+                    </h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- Browse All Button -->
+                    <button class="text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                        Browse all 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 mb-8">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-cyan-600 text-white">
+                    All
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
+                    GreenTech
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
+                    Health
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
+                    Education
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
+                    FinTech
+                </button>
+            </div>
+
+            <!-- Challenge Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Challenge Card 1 - FinTech -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <!-- Card Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                             alt="FinTech Challenge" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <!-- Status and Date -->
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-green-600 text-sm font-medium">Open</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-gray-600 text-sm">7/20/2025</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Finclusion: MSME Credit Scoring
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4">
+                            Alt-data credit scoring models for underbanked MSMEs.
+                        </p>
+                        
+                        <!-- Organization -->
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            <span class="text-gray-600 text-sm">Unity Bank</span>
+                        </div>
+                        
+                        <!-- Partner Logos -->
+                        <div class="partner-logos">
+                            <span class="partner-logos-label">Partners:</span>
+                            <div class="partner-logos-container">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=100&auto=format&fit=crop" 
+                                     alt="TechCorp" 
+                                     title="TechCorp"
+                                     class="partner-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Sector -->
+                        <div class="text-gray-600 text-sm mb-4">
+                            Sector: FinTech
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                            View Challenge
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 2 - Education -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <!-- Card Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                             alt="Education Challenge" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <!-- Status and Date -->
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-green-600 text-sm font-medium">Open</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-gray-600 text-sm">8/1/2025</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Future of Learning: Micro-credentials
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4">
+                            Aligning industry skills with stackable micro-credentials.
+                        </p>
+                        
+                        <!-- Organization -->
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            <span class="text-gray-600 text-sm">EduPartners</span>
+                        </div>
+                        
+                        <!-- Partner Logos -->
+                        <div class="partner-logos">
+                            <span class="partner-logos-label">Partners:</span>
+                            <div class="partner-logos-container">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=100&auto=format&fit=crop" 
+                                     alt="EduTech Solutions" 
+                                     title="EduTech Solutions"
+                                     class="partner-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Sector -->
+                        <div class="text-gray-600 text-sm mb-4">
+                            Sector: Education
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                            View Challenge
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Challenge Card 3 - GreenTech -->
+                <div class="bg-white flex flex-col rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                     <!-- Card Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                             alt="Education Challenge" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="p-6 h-full flex flex-col flex-1">
+                        <!-- Status and Date -->
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-orange-600 text-sm font-medium">Running</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-gray-600 text-sm">9/30/2025</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                            Smart Buildings Energy Optimization
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4">
+                            Digital twins for real-time energy efficiency.
+                        </p>
+                        
+                        <!-- Organization -->
+                        <div class="flex items-center gap-2 mb-2">
+                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            <span class="text-gray-600 text-sm">BuildTech Group</span>
+                        </div>
+                        
+                        <!-- Partner Logos -->
+                        <div class="partner-logos">
+                            <span class="partner-logos-label">Partners:</span>
+                            <div class="partner-logos-container">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=100&auto=format&fit=crop" 
+                                    alt="GreenTech Solutions" 
+                                    title="GreenTech Solutions"
+                                    class="partner-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Sector -->
+                        <div class="text-gray-600 text-sm mb-4">
+                            Sector: GreenTech
+                        </div>
+                    
+                        <!-- CTA Button -->
+                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                            View Challenge
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose MyInnovationX Section -->
+    <section id="why-choose" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Why Choose
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                        MyInnovationX
+                    </span>
+                </h2>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1: Innovation Without Borders -->
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Innovation Without Borders
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Access a global network of startups, corporates, and public sector partners.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Smart Collaboration -->
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Smart Collaboration
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Curated matching accelerates pilots and partnerships that matter.
+                    </p>
+                </div>
+
+                <!-- Feature 3: De-risked Pilots -->
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        De-risked Pilots
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Structured frameworks and support to validate solutions quickly.
+                    </p>
+                </div>
+
+                <!-- Feature 4: End-to-End Support -->
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        End-to-End Support
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        From scoping to pilots to scale-up with funding options along the way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Partnerships Section -->
+    <section id="partnership-types" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                    </svg>
+                    <h2 class="text-3xl md:text-3xl text-gray-900 tracking-tighter">
+                        Types of Partnerships
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Partnership Types Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Partnership 1: Pilots & POCs -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Pilots & POCs
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Test and validate solutions with real users and data.
+                    </p>
+                </div>
+
+                <!-- Partnership 2: Joint Development -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Joint Development
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Co-build new products tailored to industry needs.
+                    </p>
+                </div>
+
+                <!-- Partnership 3: Procurement -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Procurement
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Fast-track adoption with streamlined procurement paths.
+                    </p>
+                </div>
+
+                <!-- Partnership 4: Investment -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">
+                        Investment
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Connect with funding partners for scale and growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <!-- Rating Badge -->
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <span class="text-gray-700 font-medium text-sm">Trusted by organizations and innovators worldwide</span>
+                </div>
+                
+                <!-- Main Title -->
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    Hear from our satisfied partners
+                </h2>
+                
+                <!-- Subtitle -->
+                <p class="text-md text-gray-600 mb-6 max-w-2xl mx-auto">
+                    Become part of a worldwide community of visionaries, creators, and industry pioneers.
+                </p>
+                
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="relative">
+                <!-- Navigation Buttons -->
+                <button class="carousel-nav-button absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10" id="testimonial-prev">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                
+                <button class="carousel-nav-button absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10" id="testimonial-next">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <!-- Testimonials Container -->
+                <div class="carousel-container overflow-hidden" id="testimonials-carousel">
+                    <div class="carousel-content flex transition-transform duration-300 ease-in-out" id="testimonials-content">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <!-- Avatar -->
+                                    <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    
+                                    <!-- Client Info -->
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Mark Thompson</h4>
+                                                <p class="text-sm text-gray-600">COO</p>
+                                            </div>
+                                            <!-- Star Rating -->
+                                            <div class="flex items-center gap-1">
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <blockquote class="text-gray-700 italic">
+                                    "Managing our day-to-day tasks has never been easier. The interface is intuitive and saves us a lot of time."
+                                </blockquote>
+                                
+                                <!-- User Group Badge -->
+                                <div class="mt-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        Corporate Partner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <!-- Avatar -->
+                                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    
+                                    <!-- Client Info -->
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Emily Carter</h4>
+                                                <p class="text-sm text-gray-600">Product Manager</p>
+                                            </div>
+                                            <!-- Star Rating -->
+                                            <div class="flex items-center gap-1">
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <blockquote class="text-gray-700 italic">
+                                    "The tools provided have significantly improved our team's workflow and collaboration. Highly recommend it!"
+                                </blockquote>
+                                
+                                <!-- User Group Badge -->
+                                <div class="mt-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                        Innovator
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide w-full flex-shrink-0 px-4">
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all duration-300">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <!-- Avatar -->
+                                    <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    
+                                    <!-- Client Info -->
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <div>
+                                                <h4 class="font-semibold text-gray-900">Sophia Turner</h4>
+                                                <p class="text-sm text-gray-600">Design Director</p>
+                                            </div>
+                                            <!-- Star Rating -->
+                                            <div class="flex items-center gap-1">
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Quote -->
+                                <blockquote class="text-gray-700 italic">
+                                    "From a design perspective, the flexibility and ease of use are outstanding. This has become an indispensable tool for our team."
+                                </blockquote>
+                                
+                                <!-- User Group Badge -->
+                                <div class="mt-4">
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                                        Government Partner
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="carousel-pagination mt-8">
+                    <button class="carousel-dot active" data-slide="0"></button>
+                    <button class="carousel-dot" data-slide="1"></button>
+                    <button class="carousel-dot" data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace/Listings Preview Section -->
+    <section id="marketplace-preview" class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                            Marketplace
+                        </span>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Solution
+                        </span>
+                    </h2>
+                    <p class="text-md text-gray-600 max-w-2xl">
+                        Discover innovative solutions from our growing ecosystem of startups and innovators.
+                    </p>
+                </div>
+                <div class="mt-6 lg:mt-0">
+                    <button class="text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                        Browse marketplace 
+                        <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Marketplace Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Marketplace Item 1 -->
+                <div class="marketplace-item bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <!-- Item Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                             alt="AI-Powered Analytics Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Series A
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item Content -->
+                    <div class="p-6">
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                            AI-Powered Analytics Platform
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                            Advanced machine learning platform for predictive analytics and business intelligence.
+                        </p>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
+                                AI/ML
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-purple-100 text-purple-800">
+                                Enterprise
+                            </span>
+                        </div>
+                        
+                        <!-- Sector and Stage -->
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>Sector: FinTech</span>
+                            <span>Stage: Growth</span>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Marketplace Item 2 -->
+                <div class="marketplace-item bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <!-- Item Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                             alt="Sustainable Energy Solutions" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                Seed
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item Content -->
+                    <div class="p-6">
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                            Sustainable Energy Solutions
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                            Smart grid technology for renewable energy optimization and carbon footprint reduction.
+                        </p>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-green-100 text-green-800">
+                                GreenTech
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-blue-100 text-blue-800">
+                                IoT
+                            </span>
+                        </div>
+                        
+                        <!-- Sector and Stage -->
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>Sector: Energy</span>
+                            <span>Stage: Early</span>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Marketplace Item 3 -->
+                <div class="marketplace-item bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <!-- Item Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Healthcare Innovation Platform" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                Series B
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Item Content -->
+                    <div class="p-6">
+                        <!-- Title -->
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                            Healthcare Innovation Platform
+                        </h3>
+                        
+                        <!-- Description -->
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                            Telemedicine platform with AI diagnostics and remote patient monitoring capabilities.
+                        </p>
+                        
+                        <!-- Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-red-100 text-red-800">
+                                HealthTech
+                            </span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-purple-100 text-purple-800">
+                                AI/ML
+                            </span>
+                        </div>
+                        
+                        <!-- Sector and Stage -->
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>Sector: Healthcare</span>
+                            <span>Stage: Growth</span>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Link -->
+            <div class="text-center">
+                <a href="#marketplace" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                    View all marketplace listings
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Innovate CTA Section -->
+    <section id="ready-to-innovate" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Card with Gradient Background -->
+            <div class="bg-gradient-to-br from-blue-600 via-purple-700 to-black rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
+                <!-- Plus Pattern Background -->
+                <div class="absolute inset-0 -z-10 opacity-20">
+                    <svg width="32" height="32" class="text-white h-full w-full">
+                        <defs>
+                            <pattern id="plus-pattern-cta" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                                <line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1"></line>
+                                <line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1"></line>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#plus-pattern-cta)"></rect>
+                    </svg>
+                </div>
+                
+                <!-- Title -->
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">
+                    Ready to innovate?
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto relative z-10">
+                    Join the community or launch your first challenge today.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-gray-900 text-white shadow-sm hover:bg-gray-800 h-10 px-6">
+                        Join as Innovator
+                    </button>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 border border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-gray-50 hover:text-gray-900 h-10 px-6">
+                        Launch a Challenge
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <!-- Background gradient from bottom to top -->
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-4 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Information & Social Media -->
+                <div class="md:col-span-2 footer-column">
+                    <!-- Logo -->
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon"></div>
+                        <h3 class="text-xl font-bold text-gray-900">MyInnovationX</h3>
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN’s innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Column -->
+                <div class="footer-column text-right">
+                    <h4>Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#overview">Innovator</a></li>
+                        <li><a href="#pricing">Corporate</a></li>
+                        <li><a href="#marketplace">Marketplace</a></li>
+                        <li><a href="#features">Challenge</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Column -->
+                <div class="footer-column text-right">
+                    <h4>Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+               
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a>Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
