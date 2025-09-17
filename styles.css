@@ -762,10 +762,6 @@
     .step-indicator.completed {
         transform: scale(1.02);
     }
-    
-    .feature-image {
-        height: 250px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -781,10 +777,6 @@
     .step-number,
     .step-check {
         font-size: 0.875rem;
-    }
-    
-    .feature-image {
-        height: 200px;
     }
 }
 
@@ -1191,10 +1183,6 @@
 
 /* Testimonials responsive design */
 @media (max-width: 768px) {
-    #testimonials .carousel-nav-button {
-        display: none;
-    }
-    
     #testimonials .testimonial-slide {
         padding: 0 1rem;
     }
@@ -1469,6 +1457,40 @@ footer::before {
     letter-spacing: 0.025em;
 }
 
+/* Mobile-specific footer improvements */
+@media (max-width: 768px) {
+    .footer-column h4 {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-column ul {
+        margin-bottom: 0;
+    }
+    
+    .footer-column ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-column ul li:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Ensure Product and Company columns are side by side on mobile */
+    .grid.grid-cols-2.gap-6.md\\:contents {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet and desktop - use contents to maintain original layout */
+@media (min-width: 768px) {
+    .grid.grid-cols-2.gap-6.md\\:contents {
+        display: contents;
+    }
+}
+
 /* Footer links */
 .footer-column ul li a {
     font-size: 0.875rem;
@@ -1516,37 +1538,58 @@ footer::before {
 }
 
 /* Responsive footer adjustments */
+@media (max-width: 1024px) {
+    .footer-column {
+        margin-bottom: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     footer {
         padding: 3rem 0;
     }
     
     .footer-logo {
-        justify-content: center;
+        justify-content: flex-start;
         margin-bottom: 1.5rem;
     }
     
     .footer-column {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2rem;
     }
     
     .footer-social {
-        justify-content: center;
+        justify-content: flex-start;
     }
     
     .footer-bottom {
         text-align: center;
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .footer-legal {
-        margin-top: 1rem;
+        margin-top: 0;
     }
 }
 
 @media (max-width: 640px) {
+    footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+    
+    .footer-column {
+        margin-bottom: 1.5rem;
+    }
+    
     .footer-column h4 {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
     }
     
     .footer-column ul li a {
@@ -1558,6 +1601,7 @@ footer::before {
         font-size: 0.8rem;
     }
 }
+
 
 /* Marketplace/Listings Preview Section Styles */
 .marketplace-item {

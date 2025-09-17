@@ -16,7 +16,7 @@
         <div class="max-w-7xl mx-auto px-6 py-3">
             <div class="navbar-container flex items-center">
                 <!-- Logo (Left) -->
-                <div class="nav-logo flex-1 flex items-center">
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
                     <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
                     <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
                 </div>
@@ -26,13 +26,13 @@
                     <!-- Home Link -->
                     
                     <!-- Opportunities Link -->
-                    <a href="#opportunities" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="#opportunities" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
                     
                     <!-- Innovator/Corporate Link -->
-                    <a href="#innovator-corporate" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="#innovator-corporate" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
                     
                     <!-- About us Link -->
-                    <a href="#about" class="nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                    <a href="#about" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
                 </div>
 
                 <!-- Desktop Action Buttons (Right) -->
@@ -43,7 +43,7 @@
                 </div>
 
                 <!-- Mobile Layout -->
-                <div class="lg:hidden flex items-center justify-between w-full">
+                <div class="lg:hidden flex items-center gap-4 w-full">
                     <!-- Mobile Menu Button (Left) -->
                     <button class="hamburger cursor-pointer p-2" id="hamburger">
                     <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
@@ -54,18 +54,9 @@
                     <!-- Mobile Logo (Center) -->
                     <div class="nav-logo-mobile flex items-center">
                         <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
-                        <h2 class="text-xl font-bold text-gray-900 hover:text-primary transition-colors duration-300">MyInnovationX</h2>
+                        <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
                     </div>
                     
-                    <!-- Mobile Action Buttons (Right) -->
-                    <div class="flex items-center space-x-2">
-                        <button class="px-3 py-1.5 text-gray-600 font-medium text-xs hover:text-gray-900 transition-colors duration-300" onclick="scrollToSection('challenges')">
-                            Sign in
-                        </button>
-                        <button class="px-3 py-1.5 bg-gray-900 text-white font-medium text-xs rounded-md hover:bg-gray-800 transition-all duration-300" onclick="scrollToSection('launch-challenge')">
-                            Get started
-                        </button>
-                    </div>
                 </div>
             </div>
 
@@ -105,12 +96,6 @@
 
                     <!-- Mobile Action Buttons -->
                     <div class="mobile-menu-section pt-4 space-y-3">
-                        <button class="mobile-menu-item w-full px-4 py-3 text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 text-left" onclick="scrollToSection('challenges')">
-                            Book a demo
-                        </button>
-                        <button class="mobile-menu-item w-full px-4 py-3 border border-gray-300 text-gray-700 font-medium text-sm rounded-md hover:bg-gray-50 transition-all duration-300" onclick="scrollToSection('challenges')">
-                            Sign in
-                        </button>
                         <button class="mobile-menu-item w-full px-4 py-3 bg-gray-900 text-white font-medium text-sm rounded-md hover:bg-gray-800 transition-all duration-300" onclick="scrollToSection('launch-challenge')">
                             Get started
                         </button>
@@ -149,8 +134,8 @@
         <!-- Main content -->
         <div class="relative z-10 container mx-auto px-4 md:px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <!-- Badge -->
-                <div class="fade-up group inline-flex items-center gap-0 rounded-full bg-white border border-gray-200/50 px-3 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
+                <!-- Badge Desktop -->
+                <div class="hidden lg:inline-flex fade-up group items-center gap-0 rounded-full bg-white border border-gray-200/50 px-3 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
                     <!-- Inner Badge/Tag -->
                     <div class="-ml-2.5 shrink-0 truncate rounded-full bg-teal-200 px-2.5 py-1 text-xs font-medium text-gray-600">
                         Just launched 🚀
@@ -160,10 +145,17 @@
                         <span class="text-sm font-medium text-gray-700">The Leading Global Innovation Platform ✨</span>
                     </div>
                 </div>
+                <!-- Badge Mobile -->
+                <div class="lg:hidden inline-flex fade-up group items-center gap-0 rounded-full bg-white border border-gray-200/50 px-1 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
+                    <!-- Inner Badge/Tag -->
+                    <div class="shrink-0 truncate px-3 rounded-full bg-teal-200 py-1 text-xs font-medium text-gray-600">
+                        The Leading Global Innovation Platform ✨ 🚀
+                    </div>
+                </div>
                 
                 <!-- Main heading -->
                 <div class="fade-up" style="animation-delay: 0.7s;">
-                    <h1 class="text-5xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                    <h1 class="text-4xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
                         <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
                             Connecting Innovators to Solve 
                         </span>
@@ -197,11 +189,11 @@
                 </div>
                 
                 <!-- Statistics Section -->
-                <div class="fade-up mt-30 md:mt-[250px]" style="animation-delay: 1.1s;">
+                <div class="fade-up mt-10 md:mt-[250px]" style="animation-delay: 1.1s;">
                     <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 xl:gap-16">
                         <!-- 500+ Innovators -->
                         <div class="text-center lg:text-left">
-                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">500+</div>
+                            <div class="text-xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">500+</div>
                             <div class="text-sm md:text-base text-gray-600 font-medium">Innovators</div>
                         </div>
                         
@@ -210,7 +202,7 @@
                         
                         <!-- 30+ Projects & Pilots -->
                         <div class="text-center lg:text-left">
-                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">30+</div>
+                            <div class="text-xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">30+</div>
                             <div class="text-sm md:text-base text-gray-600 font-medium">Projects & Pilots</div>
                         </div>
                         
@@ -219,12 +211,12 @@
                         
                         <!-- 200+ Marketplace Listings -->
                         <div class="text-center lg:text-left">
-                            <div class="text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">200+</div>
+                            <div class="text-xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-2">200+</div>
                             <div class="text-sm md:text-base text-gray-600 font-medium">Marketplace Listings</div>
                         </div>
                         <div class="hidden lg:block w-px h-16 bg-gray-300"></div>
 
-                        <div class="text-center lg:text-left">
+                        <div class="text-center lg:text-left mb-8">
                             <p class="text-sm md:text-base text-gray-600 leading-relaxed">
                                 Our platform continues to grow with developers and businesses using productivity.
                             </p>
@@ -316,7 +308,6 @@
                         <img src="https://images.unsplash.com/photo-1723958929247-ef054b525153?q=80&w=2070&auto=format&fit=crop" 
                              alt="Learn the Basics" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
                     </div>
 
                     <!-- Step 2 Image -->
@@ -324,7 +315,6 @@
                         <img src="https://images.unsplash.com/photo-1723931464622-b7df7c71e380?q=80&w=2070&auto=format&fit=crop" 
                              alt="Deep Dive" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
                     </div>
 
                     <!-- Step 3 Image -->
@@ -332,7 +322,6 @@
                         <img src="https://images.unsplash.com/photo-1725961476494-efa87ae3106a?q=80&w=2070&auto=format&fit=crop" 
                              alt="Build Projects" 
                              class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
                     </div>
                 </div>
             </div>
@@ -744,7 +733,8 @@
                     <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                     </svg>
-                    <span class="text-gray-700 font-medium text-sm">Trusted by organizations and innovators worldwide</span>
+                    <span class="hidden lg:inline-block text-gray-700 font-medium text-sm">Trusted by organizations and innovators worldwide</span>
+                    <span class="lg:hidden text-gray-700 font-medium text-sm">Trusted by innovators worldwide</span>
                 </div>
                 
                 <!-- Main Title -->
@@ -1188,9 +1178,9 @@
         <div class="absolute inset-0 bg-gradient-to-t from-blue-50 via-transparent to-transparent"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-4 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <!-- Company Information & Social Media -->
-                <div class="md:col-span-2 footer-column">
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
                     <!-- Logo -->
                     <div class="footer-logo flex items-center mb-4">
                         <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
@@ -1199,7 +1189,7 @@
                     
                     <!-- Description -->
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                        Empowering Malaysia & ASEAN’s innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
                     </p>
 
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed">
@@ -1223,26 +1213,29 @@
                     </div>
                 </div>
                 
-                <!-- Product Column -->
-                <div class="footer-column text-right">
-                    <h4>Product</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#overview">Innovator</a></li>
-                        <li><a href="#pricing">Corporate</a></li>
-                        <li><a href="#marketplace">Marketplace</a></li>
-                        <li><a href="#features">Challenge</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Company Column -->
-                <div class="footer-column text-right">
-                    <h4>Company</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                    </ul>
+                <!-- Product and Company Columns Container for Mobile -->
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <!-- Product Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#overview">Innovator</a></li>
+                            <li><a href="#pricing">Corporate</a></li>
+                            <li><a href="#marketplace">Marketplace</a></li>
+                            <li><a href="#features">Challenge</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                    </div>
                 </div>
                 
                
