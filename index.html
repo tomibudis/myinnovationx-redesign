@@ -10,15 +10,17 @@
     <link href="styles.css" rel="stylesheet">
     <script src="tailwind-config.js"></script>
 </head>
-<body class="font-inter bg-gradient-to-b from-white to-blue-50 min-h-screen">
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
         <div class="max-w-7xl mx-auto px-6 py-3">
             <div class="navbar-container flex items-center">
                 <!-- Logo (Left) -->
                 <div class="nav-logo flex-1 hidden lg:flex items-center">
-                    <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
-                    <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                        <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
+                    </a>
                 </div>
 
                 <!-- Desktop Navigation Menu (Center) -->
@@ -26,20 +28,23 @@
                     <!-- Home Link -->
                     
                     <!-- Opportunities Link -->
-                    <a href="#opportunities" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
                     
                     <!-- Innovator/Corporate Link -->
-                    <a href="#innovator-corporate" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
                     
                     <!-- About us Link -->
-                    <a href="#about" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
                 </div>
 
                 <!-- Desktop Action Buttons (Right) -->
                 <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
-                    <button class="px-4 py-2 bg-gray-900 text-white font-medium text-sm rounded-md hover:bg-gray-800 transition-all duration-300">
+                    <a href="signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
                         Get started
-                    </button>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
                 </div>
 
                 <!-- Mobile Layout -->
@@ -53,8 +58,10 @@
                     
                     <!-- Mobile Logo (Center) -->
                     <div class="nav-logo-mobile flex items-center">
-                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
-                        <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
                     </div>
                     
                 </div>
@@ -65,28 +72,21 @@
                 <div class="px-6 py-6 space-y-6">
                     <!-- Mobile Navigation Links -->
                     <div class="mobile-menu-section space-y-4">
-                        <a href="#home" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
-                            <span>Home</span>
-                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-
-                        <a href="#opportunities" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
                             <span>Opportunities</span>
                             <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </a>
 
-                        <a href="#innovator-corporate" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
                             <span>Innovator/Corporate</span>
                             <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
                         </a>
 
-                        <a href="#about" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
                             <span>About us</span>
                             <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -96,9 +96,12 @@
 
                     <!-- Mobile Action Buttons -->
                     <div class="mobile-menu-section pt-4 space-y-3">
-                        <button class="mobile-menu-item w-full px-4 py-3 bg-gray-900 text-white font-medium text-sm rounded-md hover:bg-gray-800 transition-all duration-300" onclick="scrollToSection('launch-challenge')">
+                        <a href="signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
                             Get started
-                        </button>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -106,29 +109,29 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-blue-50 pt-[120px]">
+    <section id="home" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[120px]">
         <!-- Background gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-blue-100/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
         
         <!-- Grid Pattern Background -->
         <div id="grid-pattern-container" class="absolute inset-0"></div>
         
         <!-- Floating geometric shapes -->
         <div class="absolute inset-0 overflow-hidden">
-            <!-- Large indigo shape (top left) -->
-            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-indigo-200/30 to-transparent backdrop-blur-[2px] border border-indigo-200/20 shadow-[0_8px_32px_0_rgba(99,102,241,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <!-- Large blue shape (top left) -->
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
             
-            <!-- Rose shape (bottom right) -->
-            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-rose-200/30 to-transparent backdrop-blur-[2px] border border-rose-200/20 shadow-[0_8px_32px_0_rgba(244,63,94,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(244,63,94,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            <!-- Purple shape (bottom right) -->
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
             
-            <!-- Violet shape (mid-left, behind text) -->
-            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-violet-200/30 to-transparent backdrop-blur-[2px] border border-violet-200/20 shadow-[0_8px_32px_0_rgba(139,92,246,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+            <!-- Indigo shape (mid-left, behind text) -->
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-indigo-300/40 to-transparent backdrop-blur-[2px] border border-indigo-300/30 shadow-[0_8px_32px_0_rgba(99,102,241,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
             
-            <!-- Amber shape (top right) -->
-            <div class="elegant-shape absolute right-[10%] md:right-[15%] top-[5%] md:top-[10%] w-[200px] h-[50px] md:w-[250px] md:h-[60px] rounded-full bg-gradient-to-r from-amber-200/30 to-transparent backdrop-blur-[2px] border border-amber-200/20 shadow-[0_8px_32px_0_rgba(245,158,11,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: 20deg; animation-delay: 0.6s;"></div>
+            <!-- Cyan shape (top right) -->
+            <div class="elegant-shape absolute right-[10%] md:right-[15%] top-[5%] md:top-[10%] w-[200px] h-[50px] md:w-[250px] md:h-[60px] rounded-full bg-gradient-to-r from-cyan-300/40 to-transparent backdrop-blur-[2px] border border-cyan-300/30 shadow-[0_8px_32px_0_rgba(6,182,212,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 20deg; animation-delay: 0.6s;"></div>
             
-            <!-- Cyan shape (bottom left) -->
-            <div class="elegant-shape absolute left-[15%] md:left-[20%] top-[70%] md:top-[75%] w-[250px] h-[50px] md:w-[300px] md:h-[60px] rounded-full bg-gradient-to-r from-cyan-200/30 to-transparent backdrop-blur-[2px] border border-cyan-200/20 shadow-[0_8px_32px_0_rgba(6,182,212,0.1)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_70%)] animate-float-slow" style="--shape-rotate: -25deg; animation-delay: 0.7s;"></div>
+            <!-- Violet shape (bottom left) -->
+            <div class="elegant-shape absolute left-[15%] md:left-[20%] top-[70%] md:top-[75%] w-[250px] h-[50px] md:w-[300px] md:h-[60px] rounded-full bg-gradient-to-r from-violet-300/40 to-transparent backdrop-blur-[2px] border border-violet-300/30 shadow-[0_8px_32px_0_rgba(139,92,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -25deg; animation-delay: 0.7s;"></div>
         </div>
         
         <!-- Main content -->
@@ -137,7 +140,7 @@
                 <!-- Badge Desktop -->
                 <div class="hidden lg:inline-flex fade-up group items-center gap-0 rounded-full bg-white border border-gray-200/50 px-3 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
                     <!-- Inner Badge/Tag -->
-                    <div class="-ml-2.5 shrink-0 truncate rounded-full bg-teal-200 px-2.5 py-1 text-xs font-medium text-gray-600">
+                    <div class="-ml-2.5 shrink-0 truncate rounded-full bg-gradient-to-r from-blue-200 to-purple-200 px-2.5 py-1 text-xs font-medium text-gray-700">
                         Just launched 🚀
                     </div>
                     <!-- Main Title -->
@@ -148,7 +151,7 @@
                 <!-- Badge Mobile -->
                 <div class="lg:hidden inline-flex fade-up group items-center gap-0 rounded-full bg-white border border-gray-200/50 px-1 py-0.5 font-medium shadow-sm hover:shadow-md transition-all duration-300 mb-8 md:mb-12" style="animation-delay: 0.5s;">
                     <!-- Inner Badge/Tag -->
-                    <div class="shrink-0 truncate px-3 rounded-full bg-teal-200 py-1 text-xs font-medium text-gray-600">
+                    <div class="shrink-0 truncate px-3 rounded-full bg-gradient-to-r from-blue-200 to-purple-200 py-1 text-xs font-medium text-gray-700">
                         The Leading Global Innovation Platform ✨ 🚀
                     </div>
                 </div>
@@ -160,7 +163,7 @@
                             Connecting Innovators to Solve 
                         </span>
                         <br />
-                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
                             Real‑World Challenges
                         </span>
                     </h1>
@@ -174,7 +177,7 @@
                 </div>
                 <!-- CTA Buttons -->
                 <div class="fade-up flex flex-col sm:flex-row gap-4 justify-center items-center" style="animation-delay: 0.7s;">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-gray-900 text-white shadow-sm hover:bg-gray-800 h-10 px-6">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-sm hover:from-blue-700 hover:to-purple-700 h-10 px-6">
                         Launch a challenge
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -227,7 +230,7 @@
         </div>
         
         <!-- Bottom gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-blue-100/50 via-transparent to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-100/50 via-transparent to-transparent pointer-events-none"></div>
         
        
     </section>
@@ -240,7 +243,7 @@
                     <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
                         How it
                     </span>
-                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
                         Works
                     </span>
                 </h2>
@@ -338,25 +341,25 @@
                         <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
                             Featured
                         </span>
-                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
                             Challenges
                         </span>
                     </h2>
                 </div>
                 <div class="flex items-center gap-4">
                     <!-- Browse All Button -->
-                    <button class="text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                    <a href="marketplace.html" class="text-blue-600 hover:text-purple-600 font-medium text-sm transition-colors duration-300">
                         Browse all 
                         <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
 
             <!-- Filter Buttons -->
             <div class="flex flex-wrap gap-3 mb-8">
-                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-cyan-600 text-white">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
                     All
                 </button>
                 <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white text-gray-700 border border-gray-300 hover:bg-gray-50">
@@ -437,9 +440,9 @@
                         </div>
                         
                         <!-- CTA Button -->
-                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                        <a href="detail/challenges.html" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-block text-center">
                             View Challenge
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -505,9 +508,9 @@
                         </div>
                         
                         <!-- CTA Button -->
-                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                        <a href="detail/challenges.html" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-block text-center">
                             View Challenge
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -573,9 +576,9 @@
                         </div>
                     
                         <!-- CTA Button -->
-                        <button class="w-full bg-cyan-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-700 transition-colors duration-300">
+                        <a href="detail/challenges.html" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-block text-center">
                             View Challenge
-                        </button>
+                        </a>
                         
                     </div>
                 </div>
@@ -592,7 +595,7 @@
                     <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
                         Why Choose
                     </span>
-                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
                         MyInnovationX
                     </span>
                 </h2>
@@ -602,8 +605,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1: Innovation Without Borders -->
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
@@ -617,8 +620,8 @@
 
                 <!-- Feature 2: Smart Collaboration -->
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                         </svg>
                     </div>
@@ -632,8 +635,8 @@
 
                 <!-- Feature 3: De-risked Pilots -->
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                         </svg>
                     </div>
@@ -647,8 +650,8 @@
 
                 <!-- Feature 4: End-to-End Support -->
                 <div class="text-center group">
-                    <div class="w-16 h-16 mx-auto mb-6 bg-teal-50 rounded-lg flex items-center justify-center group-hover:bg-teal-100 transition-colors duration-300">
-                        <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                         </svg>
                     </div>
@@ -669,7 +672,7 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <div class="flex items-center justify-center gap-3 mb-4">
-                    <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
                     </svg>
                     <h2 class="text-3xl md:text-3xl text-gray-900 tracking-tighter">
@@ -948,7 +951,7 @@
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-12">
                 <div>
                     <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
-                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-indigo-600 via-gray-900 to-blue-600">
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
                             Marketplace
                         </span>
                         <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
@@ -960,12 +963,12 @@
                     </p>
                 </div>
                 <div class="mt-6 lg:mt-0">
-                    <button class="text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                    <a href="marketplace.html" class="text-blue-600 hover:text-purple-600 font-medium text-sm transition-colors duration-300">
                         Browse marketplace 
                         <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -988,7 +991,7 @@
                     <!-- Item Content -->
                     <div class="p-6">
                         <!-- Title -->
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                             AI-Powered Analytics Platform
                         </h3>
                         
@@ -1014,7 +1017,7 @@
                         </div>
                         
                         <!-- CTA Button -->
-                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white">
                             View Details
                         </button>
                     </div>
@@ -1037,7 +1040,7 @@
                     <!-- Item Content -->
                     <div class="p-6">
                         <!-- Title -->
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                             Sustainable Energy Solutions
                         </h3>
                         
@@ -1063,7 +1066,7 @@
                         </div>
                         
                         <!-- CTA Button -->
-                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white">
                             View Details
                         </button>
                     </div>
@@ -1086,7 +1089,7 @@
                     <!-- Item Content -->
                     <div class="p-6">
                         <!-- Title -->
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors duration-300">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                             Healthcare Innovation Platform
                         </h3>
                         
@@ -1112,7 +1115,7 @@
                         </div>
                         
                         <!-- CTA Button -->
-                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-cyan-600 hover:text-white transition-all duration-300 group-hover:bg-cyan-600 group-hover:text-white">
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white">
                             View Details
                         </button>
                     </div>
@@ -1121,7 +1124,7 @@
 
             <!-- View All Link -->
             <div class="text-center">
-                <a href="#marketplace" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium text-sm transition-colors duration-300">
+                <a href="marketplace.html" class="inline-flex items-center text-blue-600 hover:text-purple-600 font-medium text-sm transition-colors duration-300">
                     View all marketplace listings
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -1135,7 +1138,7 @@
     <section id="ready-to-innovate" class="py-16 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <!-- CTA Card with Gradient Background -->
-            <div class="bg-gradient-to-br from-blue-600 via-purple-700 to-black rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
+            <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
                 <!-- Plus Pattern Background -->
                 <div class="absolute inset-0 -z-10 opacity-20">
                     <svg width="32" height="32" class="text-white h-full w-full">
@@ -1150,7 +1153,7 @@
                 </div>
                 
                 <!-- Title -->
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10 tracking-tighter">
                     Ready to innovate?
                 </h2>
                 
@@ -1161,13 +1164,13 @@
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-gray-900 text-white shadow-sm hover:bg-gray-800 h-10 px-6">
-                        Join as Innovator
-                    </button>
-                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 border border-gray-300 bg-white text-gray-700 shadow-sm hover:bg-gray-50 hover:text-gray-900 h-10 px-6">
-                        Launch a Challenge
-                    </button>
-                </div>
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-white text-blue-600 shadow-sm hover:bg-gray-50 h-10 px-6">
+                      Join as Innovator
+                  </button>
+                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 border border-white bg-transparent text-white shadow-sm hover:bg-white hover:text-purple-700 h-10 px-6">
+                      Launch a Challenge
+                  </button>
+              </div>
             </div>
         </div>
     </section>
@@ -1175,7 +1178,7 @@
     <!-- Footer -->
     <footer class="relative bg-white py-16 overflow-hidden">
         <!-- Background gradient from bottom to top -->
-        <div class="absolute inset-0 bg-gradient-to-t from-blue-50 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -1219,10 +1222,9 @@
                     <div class="footer-column text-left md:text-right">
                         <h4>Product</h4>
                         <ul class="space-y-2">
-                            <li><a href="#overview">Innovator</a></li>
-                            <li><a href="#pricing">Corporate</a></li>
-                            <li><a href="#marketplace">Marketplace</a></li>
-                            <li><a href="#features">Challenge</a></li>
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
                         </ul>
                     </div>
                     
@@ -1230,10 +1232,10 @@
                     <div class="footer-column text-left md:text-right">
                         <h4>Company</h4>
                         <ul class="space-y-2">
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="career.html">Careers</a></li>
                         </ul>
                     </div>
                 </div>

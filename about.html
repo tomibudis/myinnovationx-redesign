@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MyInnovationX - Empowering Innovation Across ASEAN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                        <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-900 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group active">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[100px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <!-- Grid Pattern Background -->
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-indigo-300/40 to-transparent backdrop-blur-[2px] border border-indigo-300/30 shadow-[0_8px_32px_0_rgba(99,102,241,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-up" style="animation-delay: 0.5s;">
+                    <h1 class="text-4xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            About Us
+                        </span>
+                        <br />
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                          Building Malaysia’s Open Innovation Future
+                        </span>
+                    </h1>
+                </div>
+                
+                <div class="fade-up" style="animation-delay: 0.7s;">
+                    <p class="text-md text-gray-600 mb-8 leading-relaxed font-light tracking-wide max-w-4xl mx-auto px-4">
+                      MyInnovationX is Malaysia’s premier open innovation platform — connecting corporates, startups, universities, government agencies,
+                      and innovators to co-create solutions for real-world challenges. We believe every challenge is an opportunity, and every innovator has the potential to make an impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Our
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Mission
+                    </span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Accelerate Innovation</h3>
+                                <p class="text-gray-600">We bridge the gap between innovative ideas and real-world implementation, accelerating the journey from concept to market.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Foster Collaboration</h3>
+                                <p class="text-gray-600">Creating meaningful partnerships between startups, corporations, and government entities to solve complex challenges.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Build Ecosystems</h3>
+                                <p class="text-gray-600">Developing robust innovation ecosystems across ASEAN that support sustainable growth and technological advancement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                             alt="Innovation Collaboration" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-2">Building Tomorrow's Solutions Today</h3>
+                            <p class="text-white/90 text-sm">Connecting visionaries across industries to create meaningful impact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Our Story" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl md:text-4xl text-gray-900 mb-6 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Our
+                        </span>
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                            Story
+                        </span>
+                    </h2>
+                    
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            Founded with a vision to transform how innovation happens in Southeast Asia, MyInnovationX emerged from the recognition that the region's incredible potential was being held back by fragmented ecosystems and limited collaboration opportunities.
+                        </p>
+                        <p>
+                            We started as a small team of passionate innovators who believed that the future of Southeast Asia lies in its ability to harness technology and innovation to solve real-world challenges. Today, we've grown into a comprehensive platform that connects over 500+ innovators, 30+ successful projects, and 200+ marketplace listings.
+                        </p>
+                        <p>
+                            Operated by Altomate Corporate Services Sdn. Bhd., we're committed to building bridges between different stakeholders in the innovation ecosystem, making it easier for great ideas to find the resources, partners, and support they need to succeed.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Malaysia-based</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">ASEAN-focused</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Globally connected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Our
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Values
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    The principles that guide everything we do and shape our commitment to the innovation community.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Transparency</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We believe in open communication, clear processes, and honest feedback throughout the innovation journey.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Passion</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We're driven by a genuine passion for innovation and the belief that great ideas can change the world.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Community</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Building a supportive community where innovators can learn, grow, and succeed together.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Excellence</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We strive for excellence in everything we do, from platform features to user experience.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Impact</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We measure success not just by numbers, but by the real-world impact of the solutions we help create.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center group-hover:bg-purple-50 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Innovation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        We continuously evolve our platform and services to stay at the forefront of innovation trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Our
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Impact
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Numbers that reflect our commitment to building a thriving innovation ecosystem.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">500+</div>
+                    <div class="text-sm md:text-base text-gray-600 font-medium">Active Innovators</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">30+</div>
+                    <div class="text-sm md:text-base text-gray-600 font-medium">Successful Projects</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">200+</div>
+                    <div class="text-sm md:text-base text-gray-600 font-medium">Marketplace Listings</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">50+</div>
+                    <div class="text-sm md:text-base text-gray-600 font-medium">Partner Organizations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                        <h3 class="text-xl font-bold text-gray-900">MyInnovationX</h3>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="career.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a>Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

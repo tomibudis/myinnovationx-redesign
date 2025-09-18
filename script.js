@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeFeatureSteps();
     initializeMarketplace();
     initializeTestimonials();
+    initializeOpportunitiesPage();
 });
 
 // Navigation Functions
@@ -71,6 +72,188 @@ function initializeDropdownMenus() {
             });
         }
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 function toggleMobileMenu() {
@@ -134,6 +317,188 @@ function initializeScrollEffects() {
     });
 }
 
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
+}
+
 // Counter Animation
 function initializeCounters() {
     const counters = document.querySelectorAll('.stat-number');
@@ -154,6 +519,188 @@ function initializeCounters() {
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 function animateCounter(element) {
@@ -207,6 +754,188 @@ function initializeChallengeFilters() {
             });
         });
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 // Challenge Sorting
@@ -544,6 +1273,188 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
+}
+
 // Grid Pattern Functions
 function initializeGridPattern() {
     console.log('success')
@@ -839,6 +1750,188 @@ function showFeatureStep(stepIndex) {
             }
         }
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 function startFeatureAutoPlay() {
@@ -1146,16 +2239,204 @@ function initializeMarketplaceFilters() {
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
             
-            // Add active class to clicked button
+            // Add active class and styles to clicked button
             this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
             
             const filterValue = this.getAttribute('data-filter');
             filterMarketplaceItems(filterValue);
         });
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 function filterMarketplaceItems(filter) {
@@ -1172,6 +2453,188 @@ function filterMarketplaceItems(filter) {
             item.style.display = 'none';
         }
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }
 
 // Add marketplace search functionality (for future enhancement)
@@ -1205,4 +2668,186 @@ function searchMarketplaceItems(searchTerm) {
             item.style.display = 'none';
         }
     });
+}
+
+// Opportunities Page Functions
+function initializeOpportunitiesPage() {
+    // Only initialize if we're on the opportunities page
+    if (!document.querySelector('.opportunities-page')) return;
+    
+    initializeOpportunityFilters();
+    initializeOpportunitySearch();
+    initializeLoadMore();
+}
+
+function initializeOpportunityFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class and reset styles from all buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            });
+            
+            // Add active class and styles to clicked button
+            this.classList.add('active');
+            this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
+            this.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-purple-600', 'text-white');
+            
+            // Apply filter based on button text
+            const filterValue = this.textContent.trim();
+            filterOpportunities(filterValue);
+        });
+    });
+    
+    // Select dropdown functionality
+    [categorySelect, statusSelect, prizeSelect, durationSelect].forEach(select => {
+        if (select) {
+            select.addEventListener('change', function() {
+                applyAllFilters();
+            });
+        }
+    });
+}
+
+function initializeOpportunitySearch() {
+    const searchInput = document.querySelector('input[placeholder*="Search opportunities"]');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                searchOpportunities(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function initializeLoadMore() {
+    const loadMoreBtn = document.querySelector('button:contains("Load More Opportunities")');
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            // Simulate loading more opportunities
+            this.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Loading...
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                this.innerHTML = `
+                    Load More Opportunities
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                // Here you would typically load more opportunities from an API
+                console.log('Loading more opportunities...');
+            }, 1500);
+        });
+    }
+}
+
+function filterOpportunities(filterValue) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = shouldShowOpportunity(card, filterValue);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function shouldShowOpportunity(card, filterValue) {
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+    const status = card.querySelector('.rounded-full').textContent.toLowerCase();
+    const category = card.querySelector('.bg-gradient-to-r') ? 'featured' : 'regular';
+    
+    switch (filterValue) {
+        case 'All':
+            return true;
+        case 'Open Now':
+            return status.includes('open');
+        case 'High Prize':
+            const prizeText = card.textContent;
+            return prizeText.includes('$100K') || prizeText.includes('$75K') || prizeText.includes('$80K');
+        case 'Short Term':
+            const durationText = card.textContent;
+            return durationText.includes('1-3 months') || durationText.includes('3-6 months');
+        case 'Government':
+            return organization.includes('ministry') || organization.includes('government') || organization.includes('city hall');
+        case 'Corporate':
+            return organization.includes('bank') || organization.includes('berhad') || organization.includes('ventures');
+        default:
+            return true;
+    }
+}
+
+function searchOpportunities(searchTerm) {
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+        const organization = card.querySelector('.text-gray-600').textContent.toLowerCase();
+        
+        const matches = title.includes(searchTerm) || 
+                      description.includes(searchTerm) || 
+                      organization.includes(searchTerm);
+        
+        card.style.display = matches ? 'block' : 'none';
+        
+        if (matches) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyAllFilters() {
+    const categorySelect = document.querySelector('select[data-filter="category"]');
+    const statusSelect = document.querySelector('select[data-filter="status"]');
+    const prizeSelect = document.querySelector('select[data-filter="prize"]');
+    const durationSelect = document.querySelector('select[data-filter="duration"]');
+    
+    const filters = {
+        category: categorySelect ? categorySelect.value : '',
+        status: statusSelect ? statusSelect.value : '',
+        prize: prizeSelect ? prizeSelect.value : '',
+        duration: durationSelect ? durationSelect.value : ''
+    };
+    
+    const opportunityCards = document.querySelectorAll('.opportunity-card');
+    
+    opportunityCards.forEach(card => {
+        const shouldShow = applyMultipleFilters(card, filters);
+        card.style.display = shouldShow ? 'block' : 'none';
+        
+        if (shouldShow) {
+            card.style.animation = 'fadeInUp 0.3s ease-out';
+        }
+    });
+}
+
+function applyMultipleFilters(card, filters) {
+    // This would contain the logic to apply multiple filters simultaneously
+    // For now, we'll just return true to show all cards
+    return true;
 }

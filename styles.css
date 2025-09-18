@@ -10,7 +10,8 @@
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -1273,9 +1274,16 @@
 
 /* Filter button active state */
 .filter-btn.active {
-    background-color: #06b6d4 !important;
+    background: linear-gradient(to right, #2563eb, #9333ea) !important;
     color: white !important;
-    border-color: #0593ac !important;
+    border-color: transparent !important;
+}
+
+/* Ensure inactive filter buttons have proper styling */
+.filter-btn:not(.active) {
+    background: white !important;
+    color: #374151 !important;
+    border: 1px solid #d1d5db !important;
 }
 
 /* Challenge card hover effects */

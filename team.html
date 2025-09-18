@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - MyInnovationX - Meet the Innovation Leaders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                        <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[100px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <!-- Grid Pattern Background -->
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-indigo-300/40 to-transparent backdrop-blur-[2px] border border-indigo-300/30 shadow-[0_8px_32px_0_rgba(99,102,241,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-up" style="animation-delay: 0.5s;">
+                    <h1 class="text-4xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Meet Our
+                        </span>
+                        <br />
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                            Innovation Team
+                        </span>
+                    </h1>
+                </div>
+                
+                <div class="fade-up" style="animation-delay: 0.7s;">
+                    <p class="text-md text-gray-600 mb-8 leading-relaxed font-light tracking-wide max-w-4xl mx-auto px-4">
+                        The passionate innovators and industry experts driving Malaysia's open innovation ecosystem forward. 
+                        Meet the team behind MyInnovationX's mission to connect ideas with impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Leadership
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Team
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Visionary leaders with decades of combined experience in innovation, technology, and business development.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Dr. Sarah Chen" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Dr. Sarah Chen</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Chief Executive Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Former McKinsey partner with 15+ years in innovation strategy. PhD in Engineering from MIT. 
+                            Led digital transformation initiatives across Southeast Asia.
+                        </p>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Ahmad Rahman" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Ahmad Rahman</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Chief Technology Officer</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Serial entrepreneur and tech innovator. Founded 3 successful startups. 
+                            Expert in AI/ML and blockchain technologies with focus on emerging markets.
+                        </p>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-github text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Lisa Wong" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-1">Lisa Wong</h3>
+                        <p class="text-blue-600 font-medium text-sm mb-2">Head of Partnerships</p>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Former corporate innovation lead at Petronas. 12+ years building strategic partnerships 
+                            between corporates and startups across ASEAN region.
+                        </p>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Team Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Core
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Team
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Dedicated professionals working tirelessly to support our innovation ecosystem and community.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Core Team Member 1 -->
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Maria Santos" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Maria Santos</h3>
+                    <p class="text-blue-600 font-medium text-sm mb-2">Community Manager</p>
+                    <p class="text-gray-600 text-xs">Building and nurturing our innovator community across Malaysia and ASEAN.</p>
+                </div>
+
+                <!-- Core Team Member 2 -->
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop" 
+                             alt="David Kumar" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">David Kumar</h3>
+                    <p class="text-blue-600 font-medium text-sm mb-2">Platform Developer</p>
+                    <p class="text-gray-600 text-xs">Full-stack developer focused on creating seamless user experiences.</p>
+                </div>
+
+                <!-- Core Team Member 3 -->
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Priya Patel" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Priya Patel</h3>
+                    <p class="text-blue-600 font-medium text-sm mb-2">Marketing Lead</p>
+                    <p class="text-gray-600 text-xs">Driving awareness and engagement across digital channels and events.</p>
+                </div>
+
+                <!-- Core Team Member 4 -->
+                <div class="text-center group">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" 
+                             alt="James Lee" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">James Lee</h3>
+                    <p class="text-blue-600 font-medium text-sm mb-2">Operations Manager</p>
+                    <p class="text-gray-600 text-xs">Ensuring smooth operations and supporting our growing platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Board Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Advisory
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Board
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Industry veterans and thought leaders guiding our strategic direction and growth.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Advisor 1 -->
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Prof. Dr. Lim Wei Ming" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Prof. Dr. Lim Wei Ming</h3>
+                    <p class="text-gray-600 text-sm mb-2">Former Director, Malaysian Innovation Agency</p>
+                    <p class="text-gray-500 text-xs">30+ years in innovation policy and technology transfer</p>
+                </div>
+
+                <!-- Advisor 2 -->
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Tan Sri Dato' Seri" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Tan Sri Dato' Seri</h3>
+                    <p class="text-gray-600 text-sm mb-2">Chairman, ASEAN Business Council</p>
+                    <p class="text-gray-500 text-xs">Regional business leader and innovation advocate</p>
+                </div>
+
+                <!-- Advisor 3 -->
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-gray-200 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Dr. Aisha Hassan" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Dr. Aisha Hassan</h3>
+                    <p class="text-gray-600 text-sm mb-2">Partner, Venture Capital Firm</p>
+                    <p class="text-gray-500 text-xs">Investment expert focused on emerging technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Innovate CTA Section -->
+    <section id="ready-to-innovate" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Card with Gradient Background -->
+            <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
+                <!-- Plus Pattern Background -->
+                <div class="absolute inset-0 -z-10 opacity-20">
+                    <svg width="32" height="32" class="text-white h-full w-full">
+                        <defs>
+                            <pattern id="plus-pattern-cta" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                                <line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1"></line>
+                                <line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1"></line>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#plus-pattern-cta)"></rect>
+                    </svg>
+                </div>
+                
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10 tracking-tighter">
+                    Join Our Mission
+                </h2>
+                
+                <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto relative z-10">
+                    Be part of the team that's transforming how innovation happens in Malaysia and beyond.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+                    <a href="career.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-white text-blue-600 shadow-sm hover:bg-gray-50 h-10 px-6">
+                        View Open Positions
+                    </a>
+                    <a href="mailto:careers@myinnovationx.com" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 border border-white bg-transparent text-white shadow-sm hover:bg-white hover:text-purple-700 h-10 px-6">
+                        Send Your CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                        <h3 class="text-xl font-bold text-gray-900">MyInnovationX</h3>
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="career.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a>Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

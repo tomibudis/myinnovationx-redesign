@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - MyInnovationX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                        <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <!-- Opportunities Link -->
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    
+                    <!-- Innovator/Corporate Link -->
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    
+                    <!-- About us Link -->
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <button class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <!-- Mobile Menu Button (Left) -->
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <!-- Mobile Logo (Center) -->
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <!-- Mobile Navigation Links -->
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Action Buttons -->
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <button class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="min-h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[120px]">
+        <!-- Background gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <!-- Grid Pattern Background -->
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <!-- Large blue shape (top left) -->
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            
+            <!-- Purple shape (bottom right) -->
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            
+            <!-- Indigo shape (mid-left, behind text) -->
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-indigo-300/40 to-transparent backdrop-blur-[2px] border border-indigo-300/30 shadow-[0_8px_32px_0_rgba(99,102,241,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+            
+            <!-- Cyan shape (top right) -->
+            <div class="elegant-shape absolute right-[10%] md:right-[15%] top-[5%] md:top-[10%] w-[200px] h-[50px] md:w-[250px] md:h-[60px] rounded-full bg-gradient-to-r from-cyan-300/40 to-transparent backdrop-blur-[2px] border border-cyan-300/30 shadow-[0_8px_32px_0_rgba(6,182,212,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 20deg; animation-delay: 0.6s;"></div>
+            
+            <!-- Violet shape (bottom left) -->
+            <div class="elegant-shape absolute left-[15%] md:left-[20%] top-[70%] md:top-[75%] w-[250px] h-[50px] md:w-[300px] md:h-[60px] rounded-full bg-gradient-to-r from-violet-300/40 to-transparent backdrop-blur-[2px] border border-violet-300/30 shadow-[0_8px_32px_0_rgba(139,92,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -25deg; animation-delay: 0.7s;"></div>
+        </div>
+
+        <!-- Login Form Container -->
+        <div class="relative z-10 container mx-auto px-4 md:px-6 flex items-center justify-center">
+            <div class="bg-white border border-gray-200 flex w-full max-w-md flex-col items-center gap-y-8 rounded-md px-8 py-12 shadow-md">
+                <!-- Logo Section -->
+                <div class="flex flex-col items-center gap-y-2">
+                    <div class="flex items-center gap-3 lg:justify-start">
+                        <a href="index.html" class="flex items-center gap-3">
+                            <img alt="MyInnovationX" title="MyInnovationX" class="h-10 w-auto" src="myinnovationx-logo.png">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Header Title and Description -->
+                <div class="flex flex-col items-center gap-y-3 text-center">
+                    <h1 class="text-3xl font-bold text-gray-900">Welcome Back</h1>
+                    <p class="text-gray-600 text-sm max-w-sm">Sign in to your account to continue your innovation journey and connect with opportunities</p>
+                </div>
+
+                <!-- Login Form -->
+                <div class="flex w-full flex-col gap-8">
+                    <div class="flex flex-col gap-4">
+                        <!-- Email Input -->
+                        <div class="flex flex-col gap-2">
+                            <input 
+                                class="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300" 
+                                placeholder="Email" 
+                                required="" 
+                                type="email"
+                            >
+                        </div>
+
+                        <!-- Password Input -->
+                        <div class="flex flex-col gap-2">
+                            <input 
+                                class="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300" 
+                                placeholder="Password" 
+                                required="" 
+                                type="password"
+                            >
+                        </div>
+
+                        <!-- Login Button and Google Sign In -->
+                        <div class="flex flex-col gap-4">
+                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 h-10 px-4 py-2 mt-2 w-full shadow-sm hover:shadow-md transition-all duration-300" type="submit">
+                                Sign In
+                            </button>
+                            
+                            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-900 h-10 px-4 py-2 w-full transition-all duration-300">
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" class="mr-2 size-5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+                                        c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+                                        c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                                    <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+                                        C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+                                    <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+                                        c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+                                    <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+                                        c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+                                </svg>
+                                Sign in with Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Link -->
+                <div class="text-gray-600 flex justify-center gap-1 text-sm">
+                    <p>Don't have an account?</p>
+                    <a href="signup.html" class="text-blue-600 font-medium hover:underline hover:text-purple-600 transition-colors duration-300">Sign up</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-100/50 via-transparent to-transparent pointer-events-none"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
