@@ -501,7 +501,8 @@ function applyMultipleFilters(card, filters) {
 
 // Counter Animation
 function initializeCounters() {
-    const counters = document.querySelectorAll('.stat-number');
+    const counters = document.querySelectorAll('.stat-number, .stat-counter');
+    const fundingCounter = document.getElementById('funding-counter');
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px 0px -100px 0px'
@@ -510,7 +511,11 @@ function initializeCounters() {
     const counterObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateCounter(entry.target);
+                if (entry.target.id === 'funding-counter') {
+                    animateFundingCounter(entry.target);
+                } else {
+                    animateCounter(entry.target);
+                }
                 counterObserver.unobserve(entry.target);
             }
         });
@@ -519,6 +524,11 @@ function initializeCounters() {
     counters.forEach(counter => {
         counterObserver.observe(counter);
     });
+    
+    // Also observe the funding counter
+    if (fundingCounter) {
+        counterObserver.observe(fundingCounter);
+    }
 }
 
 // Opportunities Page Functions
@@ -716,6 +726,23 @@ function animateCounter(element) {
             clearInterval(timer);
         }
         element.textContent = Math.floor(current);
+    }, 16);
+}
+
+// Custom funding counter animation
+function animateFundingCounter(element) {
+    const target = 2.4; // RM 2.4M
+    const duration = 2500; // 2.5 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = `RM ${current.toFixed(1)}M`;
     }, 16);
 }
 
@@ -2850,4 +2877,71 @@ function applyMultipleFilters(card, filters) {
     // This would contain the logic to apply multiple filters simultaneously
     // For now, we'll just return true to show all cards
     return true;
+}
+
+
+// Email Subscription Functions
+function initializeEmailSubscription() {
+    const emailForm = document.getElementById("email-subscription-form");
+    const emailInput = document.getElementById("email-input");
+    const successMessage = document.getElementById("subscription-success");
+    
+    if (emailForm) {
+        emailForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim();
+            
+            if (email && isValidEmail(email)) {
+                handleEmailSubscription(email, emailForm, successMessage);
+            } else {
+                showEmailError("Please enter a valid email address.");
+            }
+        });
+    }
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function handleEmailSubscription(email, form, successMessage) {
+    const submitButton = form.querySelector("button[type=\"submit\"]");
+    const originalButtonContent = submitButton.innerHTML;
+    
+    // Show loading state
+    submitButton.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Subscribing...
+    `;
+    submitButton.disabled = true;
+    
+    // Simulate API call (replace with actual API call)
+    setTimeout(() => {
+        // Reset button
+        submitButton.innerHTML = originalButtonContent;
+        submitButton.disabled = false;
+        
+        // Show success message
+        successMessage.classList.remove("hidden");
+        form.reset();
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            successMessage.classList.add("hidden");
+        }, 5000);
+        
+        // Track subscription (optional analytics)
+        console.log("Email subscription:", email);
+        
+    }, 1500);
+}
+
+function showEmailError(message) {
+    // You can implement a toast notification or error display here
+    alert(message);
 }

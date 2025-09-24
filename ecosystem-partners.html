@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosystem Partners - MyInnovationX - Building Innovation Networks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-up" style="animation-delay: 0.5s;">
+                    <h1 class="text-4xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Ecosystem
+                        </span>
+                        <br />
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                            Partners
+                        </span>
+                    </h1>
+                </div>
+                
+                <div class="fade-up" style="animation-delay: 0.7s;">
+                    <p class="text-md text-gray-600 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                        Building bridges across universities, accelerators, corporates, and government agencies to create a thriving innovation ecosystem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Categories Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Our
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Partners
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Strategic partnerships that power innovation across Malaysia and ASEAN.
+                </p>
+            </div>
+
+            <!-- Universities Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Universities & Research Institutions</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=120&h=120&fit=crop&crop=center" alt="University of Malaya" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">University of Malaya</h4>
+                        <p class="text-sm text-gray-600 mb-3">Research Partner</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">QS Top 100</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nps0u71wqpewmD4dBB7JeOaJyS0GydEeav4222Pme5x2Eus-mB1tjh3aSHphFSchUd8iaJGppaPCzgpY5leLZnvwTc7AlyUDi4bKgYqDF6IpGTBMqzHjIC3-AmJ3w0SXyefT7E2PQ=s1360-w1360-h1020-rw" alt="Universiti Teknologi Malaysia" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Universiti Teknologi Malaysia</h4>
+                        <p class="text-sm text-gray-600 mb-3">Tech Innovation</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Engineering Excellence</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=120&h=120&fit=crop&crop=center" alt="Universiti Putra Malaysia" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Universiti Putra Malaysia</h4>
+                        <p class="text-sm text-gray-600 mb-3">AgriTech Focus</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Agricultural Innovation</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=center" alt="Universiti Sains Malaysia" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Universiti Sains Malaysia</h4>
+                        <p class="text-sm text-gray-600 mb-3">Science & Tech</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Research Excellence</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accelerators & Incubators Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Accelerators & Incubators</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">MaGIC</h4>
+                                <p class="text-sm text-gray-600">Malaysian Global Innovation & Creativity Centre</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Government-backed accelerator supporting startups with funding, mentorship, and market access.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Cradle Fund</h4>
+                                <p class="text-sm text-gray-600">Early-stage funding & support</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Providing seed funding and business development support for early-stage technology companies.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">1337 Ventures</h4>
+                                <p class="text-sm text-gray-600">Tech startup accelerator</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Leading tech accelerator providing mentorship, funding, and market access for Southeast Asian startups.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corporate Partners Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Corporate Partners</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=120&h=120&fit=crop&crop=center" alt="Tenaga Nasional" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Tenaga Nasional</h4>
+                        <p class="text-sm text-gray-600 mb-3">Energy Innovation</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Fortune 500</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=120&h=120&fit=crop&crop=center" alt="Malaysia Airports" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Malaysia Airports</h4>
+                        <p class="text-sm text-gray-600 mb-3">Smart Airport</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Public Listed</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&h=120&fit=crop&crop=center" alt="Pos Malaysia" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">Pos Malaysia</h4>
+                        <p class="text-sm text-gray-600 mb-3">Logistics Tech</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">National Service</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-xl transition-all duration-300 text-center group">
+                        <div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=center" alt="FELDA Global" class="w-20 h-20 rounded-lg object-cover">
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-base mb-2">FELDA Global</h4>
+                        <p class="text-sm text-gray-600 mb-3">AgriTech</p>
+                        <div class="flex items-center justify-center gap-1 mb-3">
+                            <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-xs text-gray-500 font-medium">Agricultural Leader</span>
+                        </div>
+                        <div class="text-xs text-green-600 font-medium bg-green-50 px-2 py-1 rounded-full">Verified Partner</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Government Agencies Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Government Agencies</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Ministry of Science, Technology & Innovation</h4>
+                                <p class="text-sm text-gray-600">MOSTI</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Leading national innovation policy and supporting R&D initiatives across Malaysia.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Malaysian Investment Development Authority</h4>
+                                <p class="text-sm text-gray-600">MIDA</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Promoting foreign direct investment and supporting local business development.</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Malaysian Digital Economy Corporation</h4>
+                                <p class="text-sm text-gray-600">MDEC</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">Driving digital transformation and supporting tech startups in Malaysia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Benefits Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Partnership
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Benefits
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Why organizations choose to partner with MyInnovationX.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-blue-50 rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Access to Innovation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Connect with cutting-edge solutions and innovative startups across multiple sectors.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-purple-50 rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Strategic Networking</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Build meaningful relationships with key stakeholders in the innovation ecosystem.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-green-50 rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Proven Results</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Track record of successful partnerships and measurable business impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Certifications Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Trust &
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Certifications
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Recognized by leading institutions and certified for security and compliance.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center shadow-sm">
+                        <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">ISO 27001</h3>
+                    <p class="text-xs text-gray-600">Information Security</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl flex items-center justify-center shadow-sm">
+                        <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">SOC 2</h3>
+                    <p class="text-xs text-gray-600">Security Compliance</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center shadow-sm">
+                        <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">GDPR</h3>
+                    <p class="text-xs text-gray-600">Data Protection</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl flex items-center justify-center shadow-sm">
+                        <svg class="w-10 h-10 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">MOSTI</h3>
+                    <p class="text-xs text-gray-600">Government Endorsed</p>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                        <div class="text-sm text-gray-600">Active Partners</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">50+</div>
+                        <div class="text-sm text-gray-600">Successful Projects</div>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="text-3xl font-bold text-green-600 mb-2">99.9%</div>
+                        <div class="text-sm text-gray-600">Uptime Guarantee</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Become a Partner CTA Section -->
+     <!-- Ready to Innovate CTA Section -->
+     <section id="ready-to-innovate" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Card with Gradient Background -->
+            <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
+                <!-- Plus Pattern Background -->
+                <div class="absolute inset-0 -z-10 opacity-20">
+                    <svg width="32" height="32" class="text-white h-full w-full">
+                        <defs>
+                            <pattern id="plus-pattern-cta" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                                <line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1"></line>
+                                <line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1"></line>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#plus-pattern-cta)"></rect>
+                    </svg>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10 tracking-tighter">
+                    Become a Partner
+                </h2>
+                
+                <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto relative z-10">
+                    Join our ecosystem of innovation partners and help shape the future of technology in Malaysia and ASEAN.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-white text-blue-600 shadow-sm hover:bg-gray-50 h-10 px-6">
+                        Partner with Us
+                    </button>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 border border-white bg-transparent text-white shadow-sm hover:bg-white hover:text-purple-700 h-10 px-6">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <!-- Background gradient from bottom to top -->
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Information & Social Media -->
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <!-- Logo -->
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product and Company Columns Container for Mobile -->
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <!-- Product Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                            <li><a href="events.html">Events & Programs</a></li>
+                            <li><a href="funding.html">Funding & Incentives</a></li>
+                            <li><a href="resources.html">Resources</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="community.html">Community</a></li>
+                            <li><a href="ecosystem-partners.html">Ecosystem Partners</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="career.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+            <!-- Email Subscription Section -->
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="max-w-md mx-auto text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-sm text-gray-600 mb-4">Get the latest innovation challenges and opportunities delivered to your inbox.</p>
+                    
+                    <!-- Email Subscription Form -->
+                    <form class="flex flex-col sm:flex-row gap-3" id="email-subscription-form">
+                        <div class="flex-1">
+                            <input 
+                                type="email" 
+                                id="email-input"
+                                placeholder="Enter your email address" 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
+                                required>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="subscription-success" class="hidden mt-3 p-2 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-800 text-xs font-medium">Thank you for subscribing!</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Notice -->
+                    <p class="text-xs text-gray-500 mt-2">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a>Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

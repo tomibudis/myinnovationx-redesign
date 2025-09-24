@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding & Incentives - MyInnovationX - Innovation Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                    </a>
+                </div>
+
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 pt-[120px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="relative z-10 container mx-auto px-4 md:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="fade-up" style="animation-delay: 0.5s;">
+                    <h1 class="text-4xl sm:text-7xl md:text-6xl mb-6 md:mb-8 tracking-tighter">
+                        <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                            Funding &
+                        </span>
+                        <br />
+                        <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                            Incentives
+                        </span>
+                    </h1>
+                </div>
+                
+                <div class="fade-up" style="animation-delay: 0.7s;">
+                    <p class="text-md text-gray-600 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4">
+                        Access grants, POC funding, tax incentives, and investment opportunities to accelerate your innovation journey.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funding Categories Section -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl text-gray-900 mb-4 tracking-tighter">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-700">
+                        Funding
+                    </span>
+                    <span class="bg-clip-text font-bold text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                        Opportunities
+                    </span>
+                </h2>
+                <p class="text-md text-gray-600 max-w-2xl mx-auto">
+                    Explore various funding sources and incentives available for innovators and startups.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Government Grants -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Government Grants</h3>
+                            <p class="text-sm text-gray-600">Public funding</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Access government grants and funding programs for innovation projects.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-blue-600 font-medium">Up to RM 500K</span>
+                        <a href="#" class="text-blue-600 text-sm font-medium hover:text-blue-700">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- POC Funding -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">POC Funding</h3>
+                            <p class="text-sm text-gray-600">Proof of concept</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Get funding to develop and test your proof of concept.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-purple-600 font-medium">Up to RM 100K</span>
+                        <a href="#" class="text-blue-600 text-sm font-medium hover:text-blue-700">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Tax Incentives -->
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Tax Incentives</h3>
+                            <p class="text-sm text-gray-600">Tax benefits</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Benefit from tax incentives and deductions for R&D activities.</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-green-600 font-medium">Up to 200% deduction</span>
+                        <a href="#" class="text-blue-600 text-sm font-medium hover:text-blue-700">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                    </div>
+                    
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="career.html">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="max-w-md mx-auto text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-sm text-gray-600 mb-4">Get the latest innovation challenges and opportunities delivered to your inbox.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-3" id="email-subscription-form">
+                        <div class="flex-1">
+                            <input 
+                                type="email" 
+                                id="email-input"
+                                placeholder="Enter your email address" 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
+                                required>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <div id="subscription-success" class="hidden mt-3 p-2 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-800 text-xs font-medium">Thank you for subscribing!</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-gray-500 mt-2">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a>Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

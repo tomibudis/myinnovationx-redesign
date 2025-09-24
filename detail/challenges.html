@@ -20,7 +20,6 @@
                 <div class="nav-logo flex-1 hidden lg:flex items-center">
                     <a href="../index.html" class="flex items-center">
                         <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
-                        <h3 class="text-lg font-bold text-gray-900">MyInnovationX</h3>
                     </a>
                 </div>
 
@@ -43,16 +42,23 @@
 
                 <!-- Mobile Layout -->
                 <div class="lg:hidden flex items-center gap-4 w-full">
+                    <!-- Mobile Menu Button (Left) -->
                     <button class="hamburger cursor-pointer p-2" id="hamburger">
-                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
-                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
-                        <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
                     </button>
+                    
+                    <!-- Mobile Logo (Center) -->
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="../index.html" class="flex items-center">
+                            <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                        </a>
+                    </div>
                     
                     <div class="nav-logo-mobile flex items-center">
                         <a href="../index.html" class="flex items-center">
                             <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
-                            <h2 class="text-lg font-bold text-gray-900">MyInnovationX</h2>
                         </a>
                     </div>
                 </div>
@@ -610,18 +616,21 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer class="relative bg-white py-16 overflow-hidden">
+     <!-- Footer -->
+     <footer class="relative bg-white py-16 overflow-hidden">
+        <!-- Background gradient from bottom to top -->
         <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Information & Social Media -->
                 <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <!-- Logo -->
                     <div class="footer-logo flex items-center mb-4">
-                        <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
-                        <h3 class="text-xl font-bold text-gray-900">MyInnovationX</h3>
+                        <img src="myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
                     </div>
                     
+                    <!-- Description -->
                     <p class="text-gray-600 text-sm mb-6 leading-relaxed">
                         Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
                     </p>
@@ -630,6 +639,7 @@
                         Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
                     </p>
                     
+                    <!-- Social Media Links -->
                     <div class="flex space-x-4 footer-social">
                         <a href="#" class="w-8 h-8">
                             <i class="fab fa-instagram text-lg"></i>
@@ -646,28 +656,82 @@
                     </div>
                 </div>
                 
+                <!-- Product and Company Columns Container for Mobile -->
                 <div class="grid grid-cols-2 gap-6 md:contents">
+                    <!-- Product Column -->
                     <div class="footer-column text-left md:text-right">
                         <h4>Product</h4>
                         <ul class="space-y-2">
-                            <li><a href="../innovator-corporate.html">Innovator/Corporate</a></li>
-                            <li><a href="../marketplace.html">Marketplace</a></li>
-                            <li><a href="../opportunities.html">Opportunities</a></li>
+                            <li><a href="innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="marketplace.html">Marketplace</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                            <li><a href="events.html">Events & Programs</a></li>
+                            <li><a href="funding.html">Funding & Incentives</a></li>
+                            <li><a href="resources.html">Resources</a></li>
                         </ul>
                     </div>
                     
+                    <!-- Company Column -->
                     <div class="footer-column text-left md:text-right">
                         <h4>Company</h4>
                         <ul class="space-y-2">
-                            <li><a href="../about.html">About</a></li>
-                            <li><a href="../team.html">Team</a></li>
-                            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="../career.html">Careers</a></li>
+                            <li><a href="community.html">Community</a></li>
+                            <li><a href="ecosystem-partners.html">Ecosystem Partners</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="career.html">Careers</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
+                
+               
             </div>
             
+            <!-- Email Subscription Section -->
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="max-w-md mx-auto text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-sm text-gray-600 mb-4">Get the latest innovation challenges and opportunities delivered to your inbox.</p>
+                    
+                    <!-- Email Subscription Form -->
+                    <form class="flex flex-col sm:flex-row gap-3" id="email-subscription-form">
+                        <div class="flex-1">
+                            <input 
+                                type="email" 
+                                id="email-input"
+                                placeholder="Enter your email address" 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
+                                required>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="subscription-success" class="hidden mt-3 p-2 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-800 text-xs font-medium">Thank you for subscribing!</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Notice -->
+                    <p class="text-xs text-gray-500 mt-2">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
             <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
                 <p class="footer-copyright mb-4 md:mb-0">
                     © 2025 MyInnovationX. All rights reserved.
