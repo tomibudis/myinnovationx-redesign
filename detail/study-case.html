@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study - MyInnovationX - Success Story</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <link href="challenge-detail.css" rel="stylesheet">
+    <script src="../tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="../opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="../innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="../about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="../signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <!-- Mobile Menu Button (Left) -->
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                        <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+
+                    <!-- Mobile Logo (Center) -->
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="../index.html" class="flex items-center">
+                            <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="../opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="../innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="../about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="../signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="pt-[100px] pb-6 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500">
+                <a href="../index.html" class="hover:text-blue-600 transition-colors duration-300">Home</a>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <a href="../index.html#success-stories" class="hover:text-blue-600 transition-colors duration-300">Success Stories</a>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="text-gray-900 font-medium">Case Study</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Case Study Hero Section -->
+    <section class="relative min-h-[520px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 py-12">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Cover Image -->
+                <div class="lg:col-span-1 flex items-center">
+                    <div class="relative h-64 lg:h-80 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                             alt="Case Study Cover" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                Completed
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Info -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            MSME Credit Scoring Solution
+                        </h1>
+                        <p class="text-sm text-gray-600 mb-6">
+                            How Unity Bank partnered with innovators to build an AI-powered alternative credit scoring system that increased approvals by 40% for underbanked MSMEs.
+                        </p>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">40%</div>
+                            <div class="text-sm text-gray-600">Approval increase</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">$2M</div>
+                            <div class="text-sm text-gray-600">Funding raised</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">6 mo</div>
+                            <div class="text-sm text-gray-600">Build time</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">3</div>
+                            <div class="text-sm text-gray-600">Pilot sites</div>
+                        </div>
+                    </div>
+
+                    <!-- Organization -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">Unity Bank Malaysia</div>
+                            <div class="text-sm text-gray-600">Financial Services</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Overview -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Overview</h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-sm text-gray-600 mb-4">
+                                This case study highlights the development and deployment of an alternative credit scoring solution tailored for MSMEs using non-traditional data sources. The initiative aimed to expand financial inclusion while maintaining compliance and risk standards.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mb-4 space-y-2">
+                                <li>Aggregated mobile money, utility payments, and business performance data</li>
+                                <li>Explainable ML models to satisfy regulatory requirements</li>
+                                <li>Seamless API integration into existing loan workflow</li>
+                                <li>Gradual rollout via pilot with continuous A/B improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Approach -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Approach</h2>
+                        <div class="space-y-4 text-sm text-gray-600">
+                            <p>Co-created with Unity Bank risk teams and regulators to ensure alignment on data usage and model governance. Built human-in-the-loop review for edge cases and explainability dashboards for auditors.</p>
+                            <p>Deployed via cloud-native microservices with strict encryption and role-based access, supporting peak underwriting volumes without latency degradation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Results</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">40% higher loan approvals</h3>
+                                        <p class="text-sm text-gray-600">Without increasing default rates, verified after 6-month post-launch period.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">2x faster underwriting</h3>
+                                        <p class="text-sm text-gray-600">Average decision time reduced from 5 days to 2.5 days.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Regulatory-grade explainability</h3>
+                                        <p class="text-sm text-gray-600">Feature attributions accessible per decision, aiding appeals and audits.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Stakeholder alignment</h3>
+                                        <p class="text-sm text-gray-600">Risk, product, and tech teams co-owned KPIs and review cadence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Callout CTA -->
+                    <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 rounded-2xl p-8 text-white shadow-xl">
+                        <h3 class="text-2xl font-bold mb-2">Want results like this?</h3>
+                        <p class="text-blue-100 mb-4 text-sm">Join as an innovator or launch a challenge to collaborate with top teams.</p>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="../signin.html" class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-white text-blue-600 hover:bg-gray-50 h-10 px-6">Join as Innovator</a>
+                            <a href="../opportunities.html" class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium border border-white bg-transparent text-white hover:bg-white hover:text-purple-700 h-10 px-6">Launch a Challenge</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Quick Info -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 text-sm">Quick Info</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">Sector</span>
+                                    <span class="text-sm text-gray-900">FinTech</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">Duration</span>
+                                    <span class="text-sm text-gray-900">6 months</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600">Partners</span>
+                                    <span class="text-sm text-gray-900">TechCorp, DataFlow</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Downloads / Resources -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 text-sm">Resources</h3>
+                            <div class="space-y-3">
+                                <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-900">Download PDF</span>
+                                </a>
+                                <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-900">API Docs Snapshot</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (reuse from challenge page) -->
+    <footer class="relative bg-white py-16 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                    </div>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="#" class="w-8 h-8"><i class="fab fa-facebook text-lg"></i></a>
+                        <a href="#" class="w-8 h-8"><i class="fab fa-twitter text-lg"></i></a>
+                        <a href="#" class="w-8 h-8"><i class="fab fa-linkedin text-lg"></i></a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="../marketplace.html">Marketplace</a></li>
+                            <li><a href="../opportunities.html">Opportunities</a></li>
+                            <li><a href="../events.html">Events & Programs</a></li>
+                            <li><a href="../funding.html">Funding & Incentives</a></li>
+                            <li><a href="../resources.html">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../community.html">Community</a></li>
+                            <li><a href="../ecosystem-partners.html">Ecosystem Partners</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../team.html">Team</a></li>
+                            <li><a href="../career.html">Careers</a></li>
+                            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="max-w-md mx-auto text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-sm text-gray-600 mb-4">Get the latest innovation challenges and opportunities delivered to your inbox.</p>
+                    <form class="flex flex-col sm:flex-row gap-3" id="email-subscription-form">
+                        <div class="flex-1">
+                            <input type="email" id="email-input" placeholder="Enter your email address" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm" required>
+                        </div>
+                        <button type="submit" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                        </button>
+                    </form>
+                    <div id="subscription-success" class="hidden mt-3 p-2 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-green-800 text-xs font-medium">Thank you for subscribing!</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </div>
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">© 2025 MyInnovationX. All rights reserved.</p>
+                <div class="flex space-x-6"><a href="mailto:support@myinnovationx.com">Email: support@myinnovationx.com</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="challenge-detail.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Details - MyInnovationX - Innovation Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <link href="marketplace-solution-detail.css" rel="stylesheet">
+    <script src="../tailwind-config.js"></script>
+</head>
+<body class="font-inter bg-gradient-to-b from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="navbar-container flex items-center">
+                <!-- Logo (Left) -->
+                <div class="nav-logo flex-1 hidden lg:flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-8 w-auto mr-3">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Menu (Center) -->
+                <div class="nav-center hidden lg:flex items-center space-x-8 flex-1 justify-center" id="nav-menu">
+                    <a href="../opportunities.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Opportunities</a>
+                    <a href="../innovator-corporate.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">Innovator/Corporate</a>
+                    <a href="../about.html" class="whitespace-nowrap nav-link text-gray-600 font-medium text-sm hover:text-gray-900 transition-colors duration-300 relative group">About us</a>
+                </div>
+
+                <!-- Desktop Action Buttons (Right) -->
+                <div class="nav-right hidden lg:flex items-center space-x-4 flex-shrink-0">
+                    <a href="../signin.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                        Get started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="lg:hidden flex items-center gap-4 w-full">
+                    <!-- Mobile Menu Button (Left) -->
+                    <button class="hamburger cursor-pointer p-2" id="hamburger">
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 mb-1 transition-all duration-300"></div>
+                    <div class="w-5 h-0.5 bg-gray-700 transition-all duration-300"></div>
+                    </button>
+                    
+                    <!-- Mobile Logo (Center) -->
+                    <div class="nav-logo-mobile flex items-center">
+                        <a href="../index.html" class="flex items-center">
+                            <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-6 w-auto mr-2">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="lg:hidden mobile-menu absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-lg opacity-0 invisible transition-all duration-300 transform -translate-y-2" id="mobile-menu">
+                <div class="px-6 py-6 space-y-6">
+                    <div class="mobile-menu-section space-y-4">
+                        <a href="../opportunities.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Opportunities</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="../innovator-corporate.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>Innovator/Corporate</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="../about.html" class="mobile-menu-item flex items-center justify-between text-lg text-gray-700 hover:text-gray-900 transition-colors duration-300 group">
+                            <span>About us</span>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="mobile-menu-section pt-4 space-y-3">
+                        <a href="../signin.html" class="mobile-menu-item w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-200 to-purple-200 text-gray-700 font-medium text-sm rounded-md hover:from-blue-300 hover:to-purple-300 transition-all duration-300">
+                            Get started
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <section class="pt-[100px] pb-6 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm text-gray-500">
+                <a href="../index.html" class="hover:text-blue-600 transition-colors duration-300">Home</a>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <a href="../marketplace.html" class="hover:text-blue-600 transition-colors duration-300">Marketplace</a>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+                <span class="text-gray-900 font-medium">Solution Details</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Solution Hero Section -->
+    <section class="relative min-h-[600px] w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 py-12">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-indigo-200/40"></div>
+        
+        <!-- Grid Pattern Background -->
+        <div id="grid-pattern-container" class="absolute inset-0"></div>
+        
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="elegant-shape absolute left-[-15%] md:left-[-10%] top-[10%] md:top-[15%] w-[400px] h-[80px] md:w-[500px] md:h-[100px] rounded-full bg-gradient-to-r from-blue-300/40 to-transparent backdrop-blur-[2px] border border-blue-300/30 shadow-[0_8px_32px_0_rgba(59,130,246,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: 12deg; animation-delay: 0.3s;"></div>
+            <div class="elegant-shape absolute right-[-10%] md:right-[-5%] top-[60%] md:top-[65%] w-[350px] h-[70px] md:w-[450px] md:h-[90px] rounded-full bg-gradient-to-r from-purple-300/40 to-transparent backdrop-blur-[2px] border border-purple-300/30 shadow-[0_8px_32px_0_rgba(147,51,234,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -15deg; animation-delay: 0.5s;"></div>
+            <div class="elegant-shape absolute left-[0%] md:left-[5%] top-[40%] md:top-[45%] w-[500px] h-[60px] md:w-[600px] md:h-[80px] rounded-full bg-gradient-to-r from-indigo-300/40 to-transparent backdrop-blur-[2px] border border-indigo-300/30 shadow-[0_8px_32px_0_rgba(99,102,241,0.15)] after:absolute after:inset-0 after:rounded-full after:bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.15),transparent_70%)] animate-float-slow" style="--shape-rotate: -8deg; animation-delay: 0.4s;"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Solution Image -->
+                <div class="lg:col-span-1 flex items-center">
+                    <div class="relative h-64 lg:h-80 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
+                             alt="AI-Powered Analytics Platform" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Verified
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Info -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            AI-Powered Analytics Platform
+                        </h1>
+                        <p class="text-sm text-gray-600 mb-6">
+                            Advanced machine learning platform for predictive analytics and business intelligence with real-time insights and automated decision-making capabilities.
+                        </p>
+                    </div>
+
+                    <!-- Solution Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">Series A</div>
+                            <div class="text-sm text-gray-600">Funding Stage</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">2+</div>
+                            <div class="text-sm text-gray-600">Years Active</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">50+</div>
+                            <div class="text-sm text-gray-600">Clients</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center border border-gray-200">
+                            <div class="text-lg font-semibold text-gray-900 mb-1">99.9%</div>
+                            <div class="text-sm text-gray-600">Uptime</div>
+                        </div>
+                    </div>
+
+                    <!-- Company Info -->
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-900 text-sm">DataFlow Technologies</div>
+                            <div class="text-sm text-gray-600">AI/ML Solutions Provider</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Details Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Content -->
+                <div class="lg:col-span-2">
+                    <!-- Solution Description -->
+                    <div class="solution-description bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="solution-section-title text-2xl font-bold text-gray-900 mb-6">Solution Overview</h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-sm text-gray-600 mb-4">
+                                Our AI-Powered Analytics Platform revolutionizes how businesses make data-driven decisions through advanced machine learning algorithms and real-time processing capabilities. The platform integrates seamlessly with existing business systems to provide comprehensive insights and predictive analytics.
+                            </p>
+                            <p class="text-sm text-gray-600 mb-4">
+                                Key capabilities include:
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 mb-4 space-y-2">
+                                <li>Real-time data processing and analysis with sub-second response times</li>
+                                <li>Advanced machine learning models for predictive analytics and forecasting</li>
+                                <li>Automated report generation and customizable dashboards</li>
+                                <li>Integration with 100+ data sources including CRM, ERP, and cloud platforms</li>
+                                <li>Natural language query interface for non-technical users</li>
+                                <li>Advanced security and compliance features (SOC 2, GDPR ready)</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                The platform has been successfully deployed across various industries including finance, healthcare, retail, and manufacturing, helping organizations increase operational efficiency by an average of 35%.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="solution-features bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="solution-section-title text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2 text-sm">AI & Machine Learning</h3>
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                    <li>Automated model training and deployment</li>
+                                    <li>Real-time anomaly detection and alerting</li>
+                                    <li>Predictive analytics with 95%+ accuracy</li>
+                                    <li>Natural language processing for data queries</li>
+                                    <li>Automated feature engineering and selection</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Data Integration</h3>
+                                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                    <li>Connect to 100+ data sources and APIs</li>
+                                    <li>Real-time data streaming and processing</li>
+                                    <li>Data quality monitoring and validation</li>
+                                    <li>Automated data pipeline management</li>
+                                    <li>Cloud and on-premise deployment options</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Use Cases -->
+                    <div class="solution-use-cases bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="solution-section-title text-2xl font-bold text-gray-900 mb-6">Use Cases</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-sm font-bold text-blue-600">1</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Financial Services</h3>
+                                        <p class="text-sm text-gray-600">Fraud detection, risk assessment, and algorithmic trading</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-sm font-bold text-blue-600">2</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Healthcare</h3>
+                                        <p class="text-sm text-gray-600">Patient diagnosis, treatment optimization, and drug discovery</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-sm font-bold text-blue-600">3</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Retail & E-commerce</h3>
+                                        <p class="text-sm text-gray-600">Customer segmentation, demand forecasting, and pricing optimization</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span class="text-sm font-bold text-blue-600">4</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Manufacturing</h3>
+                                        <p class="text-sm text-gray-600">Predictive maintenance, quality control, and supply chain optimization</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="solution-pricing bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+                        <h2 class="solution-section-title text-2xl font-bold text-gray-900 mb-6">Pricing & Plans</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Starter Plan</h3>
+                                        <p class="text-sm text-gray-600">$2,999/month - Up to 10 users, basic analytics</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Professional Plan</h3>
+                                        <p class="text-sm text-gray-600">$7,999/month - Up to 50 users, advanced ML features</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Enterprise Plan</h3>
+                                        <p class="text-sm text-gray-600">Custom pricing - Unlimited users, full customization</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900 text-sm">Support</h3>
+                                        <p class="text-sm text-gray-600">24/7 technical support and dedicated account manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementation -->
+                    <div class="solution-implementation bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+                        <h2 class="solution-section-title text-2xl font-bold text-gray-900 mb-6">Implementation Timeline</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-900 text-sm">Discovery & Planning</div>
+                                    <div class="text-sm text-gray-600">Week 1-2: Requirements gathering and system architecture design</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-900 text-sm">Data Integration</div>
+                                    <div class="text-sm text-gray-600">Week 3-4: Connect data sources and establish data pipelines</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-900 text-sm">Model Training</div>
+                                    <div class="text-sm text-gray-600">Week 5-6: Train and validate machine learning models</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-900 text-sm">Testing & Deployment</div>
+                                    <div class="text-sm text-gray-600">Week 7-8: User acceptance testing and production deployment</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                <div class="flex-1">
+                                    <div class="font-semibold text-gray-900 text-sm">Training & Support</div>
+                                    <div class="text-sm text-gray-600">Week 9-10: User training and ongoing support setup</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        <!-- Quick Info -->
+                        <div class="solution-quick-info bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4 text-sm">Quick Info</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Status</span>
+                                <span class="text-sm text-green-600 font-medium">Available</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Category</span>
+                                <span class="text-sm text-gray-900">AI/ML</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Stage</span>
+                                <span class="text-sm text-blue-600">Series A</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Deployment</span>
+                                <span class="text-sm text-gray-900">Cloud/On-premise</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-600">Support</span>
+                                <span class="text-sm text-gray-900">24/7</span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Company -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4 text-sm">Company</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=100&auto=format&fit=crop" 
+                                     alt="DataFlow Technologies" 
+                                     class="w-8 h-8 rounded-full object-cover">
+                                <div>
+                                    <div class="font-medium text-gray-900 text-sm">DataFlow Technologies</div>
+                                    <div class="text-sm text-gray-600">AI/ML Solutions Provider</div>
+                                </div>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p>Founded: 2022</p>
+                                <p>Employees: 25-50</p>
+                                <p>Location: Kuala Lumpur, Malaysia</p>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Resources -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4 text-sm">Resources</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-900">Product Brochure</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-900">Technical Documentation</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300">
+                                <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-900">Demo Request</span>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Solutions -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Related Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Related Solution 1 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=2070&auto=format&fit=crop" 
+                             alt="HealthTech Solution" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                Series B
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Telemedicine Platform</h3>
+                        <p class="text-gray-600 text-sm mb-4">AI-powered telemedicine solution with remote patient monitoring.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>MediConnect AI</span>
+                            <span>HealthTech</span>
+                        </div>
+                        <a href="marketplace-solution.html" class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-200 transition-all duration-300 inline-block text-center">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Solution 2 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop" 
+                             alt="GreenTech Solution" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Seed
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Grid Management</h3>
+                        <p class="text-gray-600 text-sm mb-4">IoT-based solutions for optimizing energy distribution.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>EcoGrid Solutions</span>
+                            <span>GreenTech</span>
+                        </div>
+                        <a href="marketplace-solution.html" class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-200 transition-all duration-300 inline-block text-center">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Related Solution 3 -->
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                             alt="EdTech Solution" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                Pre-Seed
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Learning Analytics</h3>
+                        <p class="text-gray-600 text-sm mb-4">Intelligent learning platform with personalized education.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>EduAI Solutions</span>
+                            <span>EdTech</span>
+                        </div>
+                        <a href="marketplace-solution.html" class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-md text-sm font-medium hover:bg-gray-200 transition-all duration-300 inline-block text-center">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Connect CTA Section -->
+    <section id="ready-to-innovate" class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Card with Gradient Background -->
+            <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-center shadow-xl relative overflow-hidden">
+                <!-- Plus Pattern Background -->
+                <div class="absolute inset-0 -z-10 opacity-20">
+                    <svg width="32" height="32" class="text-white h-full w-full">
+                        <defs>
+                            <pattern id="plus-pattern-cta" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                                <line x1="8" y1="5" x2="8" y2="11" stroke="currentColor" stroke-width="1"></line>
+                                <line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1"></line>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#plus-pattern-cta)"></rect>
+                    </svg>
+                </div>
+                
+                <!-- Title -->
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 relative z-10 tracking-tighter">
+                    Ready to connect?
+                </h2>
+                
+                <!-- Description -->
+                <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto relative z-10">
+                    Get in touch with the solution provider or explore more innovative technologies in our marketplace.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-10">
+                  <a href="mailto:contact@dataflowtech.com" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 bg-white text-blue-600 shadow-sm hover:bg-gray-50 h-10 px-6">
+                      Contact Company
+                  </a>
+                  <a href="../marketplace.html" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2 border border-white bg-transparent text-white shadow-sm hover:bg-white hover:text-purple-700 h-10 px-6">
+                      Browse More Solutions
+                  </a>
+              </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Footer -->
+     <footer class="relative bg-white py-16 overflow-hidden">
+        <!-- Background gradient from bottom to top -->
+        <div class="absolute inset-0 bg-gradient-to-t from-purple-50 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Information & Social Media -->
+                <div class="md:col-span-2 lg:col-span-2 footer-column">
+                    <!-- Logo -->
+                    <div class="footer-logo flex items-center mb-4">
+                        <img src="../myinnovationx-logo.png" alt="MyInnovationX Logo" class="h-10 w-auto mr-1">
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Empowering Malaysia & ASEAN's innovation ecosystem by connecting startups, corporates, and government to co-create real-world solutions.
+                    </p>
+
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Operated by: Altomate Corporate Services Sdn. Bhd. (202101015605)
+                    </p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4 footer-social">
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product and Company Columns Container for Mobile -->
+                <div class="grid grid-cols-2 gap-6 md:contents">
+                    <!-- Product Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../innovator-corporate.html">Innovator/Corporate</a></li>
+                            <li><a href="../marketplace.html">Marketplace</a></li>
+                            <li><a href="../opportunities.html">Opportunities</a></li>
+                            <li><a href="../events.html">Events & Programs</a></li>
+                            <li><a href="../funding.html">Funding & Incentives</a></li>
+                            <li><a href="../resources.html">Resources</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Column -->
+                    <div class="footer-column text-left md:text-right">
+                        <h4>Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="../community.html">Community</a></li>
+                            <li><a href="../ecosystem-partners.html">Ecosystem Partners</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../team.html">Team</a></li>
+                            <li><a href="../career.html">Careers</a></li>
+                            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+            <!-- Email Subscription Section -->
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="max-w-md mx-auto text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Stay Updated</h3>
+                    <p class="text-sm text-gray-600 mb-4">Get the latest innovation challenges and opportunities delivered to your inbox.</p>
+                    
+                    <!-- Email Subscription Form -->
+                    <form class="flex flex-col sm:flex-row gap-3" id="email-subscription-form">
+                        <div class="flex-1">
+                            <input 
+                                type="email" 
+                                id="email-input"
+                                placeholder="Enter your email address" 
+                                class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm"
+                                required>
+                        </div>
+                        <button 
+                            type="submit" 
+                            class="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <span>Subscribe</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="subscription-success" class="hidden mt-3 p-2 bg-green-100 border border-green-300 rounded-lg">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-green-800 text-xs font-medium">Thank you for subscribing!</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Privacy Notice -->
+                    <p class="text-xs text-gray-500 mt-2">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="footer-bottom flex flex-col md:flex-row justify-between items-center">
+                <p class="footer-copyright mb-4 md:mb-0">
+                    © 2025 MyInnovationX. All rights reserved.
+                </p>
+                <div class="flex space-x-6 footer-legal">
+                    <a href="mailto:support@myinnovationx.com">Email: support@myinnovationx.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="marketplace-solution-detail.js"></script>
+</body>
+</html>
